@@ -8,8 +8,22 @@
 
 #import <UIKit/UIKit.h>
 #import "LBYouTube.h"
+#import <Twitter/Twitter.h>
 
 @interface KVViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIWebView *player;
+@property (weak, nonatomic) IBOutlet UIView *topView;
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
+@property (weak, nonatomic) IBOutlet UIButton *likeButton;
+@property (weak, nonatomic) IBOutlet UILabel *videoName;
+@property (weak, nonatomic) IBOutlet UILabel *header;
+@property (weak, nonatomic) IBOutlet UIButton *shuffleButton;
+@property (weak, nonatomic) IBOutlet UIButton *likesButton;
+@property (weak, nonatomic) IBOutlet UILabel *rastgeleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *begendiklerimLabel;
+@property (weak, nonatomic) IBOutlet UILabel *likeCounter;
 
+- (IBAction)likeVideo:(id)sender;
+- (IBAction)nextVideo:(id)sender;
+- (IBAction)share:(id)sender;
 @end
