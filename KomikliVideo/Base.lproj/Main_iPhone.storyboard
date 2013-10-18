@@ -309,7 +309,6 @@
     <resources>
         <image name="arrow_down.png" width="18" height="12"/>
         <image name="column.png" width="2" height="1008"/>
-        <image name="column.png" width="2" height="1008"/>
         <image name="heart_dark.png" width="54" height="46"/>
         <image name="heart_large.png" width="46" height="38"/>
         <image name="infinity.png" width="38" height="20"/>
