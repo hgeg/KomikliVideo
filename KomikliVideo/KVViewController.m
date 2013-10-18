@@ -33,6 +33,9 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @synthesize shuffleButton;
 @synthesize likesButton;
 @synthesize likeCounter;
+NSMutableArray *tableData;
+int likecount=0;
+
 
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -46,6 +49,12 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    tableData = [[NSMutableArray alloc] init];
+    
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    [standardUserDefaults setObject:tableData forKey:@"tableData"];
+    //[standardUserDefaults setInteger:likecount forKey:@"likeCount"];
     
     //UIFont *Dosisbold = [UIFont fontWithName:@"Dosis-Bold" size:17.0f];
     UIFont *Dosisbook = [UIFont fontWithName:@"Dosis-Book" size:25.0f];
@@ -70,9 +79,18 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     [begendiklerimLabel setTextColor:UIColorFromRGB(0xb4b4b5)];
     
     [likeCounter setFont:Dosisbook];
+    //likeCounter.text = [standardUserDefaults objectForKey:@"likeCount"];
     [likeCounter setTextColor:UIColorFromRGB(0xb4b4b5)];
     
     //shuffleButton.backgroundColor = UIColorFromRGB(0x4f4d52);
+    
+    UILabel *customTitle = [[UILabel alloc] init];
+    [customTitle setFrame:CGRectMake(0,5,50,20)];
+    customTitle.text = @"Komik TV";
+    [customTitle setFont: Dosisbook];
+    [customTitle setTextColor:UIColorFromRGB(0xb4b4b5)];
+    
+    self.navigationItem.titleView = customTitle;
     
     
 }
@@ -95,6 +113,10 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
         [sender setImage:image forState:UIControlStateNormal];
         likeCounter.text = [NSString stringWithFormat:@"%d",[likeCounter.text intValue]+1];
         likeButton.restorationIdentifier = @"0";
+        
+        [tableData addObject:videoName.text];
+        NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+        [standardUserDefaults setObject:tableData forKey:@"tableData"];
     }
     else
     {
@@ -102,6 +124,10 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
         [sender setImage:image forState:UIControlStateNormal];
         likeCounter.text = [NSString stringWithFormat:@"%d",[likeCounter.text intValue]-1];
         likeButton.restorationIdentifier = @"1";
+        
+        [tableData removeObject:videoName.text];
+        NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+        [standardUserDefaults setObject:tableData forKey:@"tableData"];
     }
     
     

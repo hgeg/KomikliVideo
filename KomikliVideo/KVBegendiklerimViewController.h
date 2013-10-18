@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KVBegendiklerimViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *videoName;
+@interface KVBegendiklerimViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *myTable;
 
 @end
