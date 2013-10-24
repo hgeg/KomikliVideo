@@ -269,9 +269,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		366432B317F1FB5700401CBF /* KomikliVideo */ = {
+		366432B317F1FB5700401CBF /* Komik TV */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 366432E917F1FB5800401CBF /* Build configuration list for PBXNativeTarget "KomikliVideo" */;
+			buildConfigurationList = 366432E917F1FB5800401CBF /* Build configuration list for PBXNativeTarget "Komik TV" */;
 			buildPhases = (
 				366432B017F1FB5700401CBF /* Sources */,
 				366432B117F1FB5700401CBF /* Frameworks */,
@@ -281,7 +281,7 @@
 			);
 			dependencies = (
 			);
-			name = KomikliVideo;
+			name = "Komik TV";
 			productName = KomikliVideo;
 			productReference = 366432B417F1FB5700401CBF /* KomikliVideo.app */;
 			productType = "com.apple.product-type.application";
@@ -322,7 +322,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 366432AF17F1FB5700401CBF /* Build configuration list for PBXProject "KomikliVideo" */;
+			buildConfigurationList = 366432AF17F1FB5700401CBF /* Build configuration list for PBXProject "Komik TV" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -335,7 +335,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				366432B317F1FB5700401CBF /* KomikliVideo */,
+				366432B317F1FB5700401CBF /* Komik TV */,
 				366432D717F1FB5800401CBF /* KomikliVideoTests */,
 			);
 		};
@@ -412,7 +412,7 @@
 /* Begin PBXTargetDependency section */
 		366432DE17F1FB5800401CBF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 366432B317F1FB5700401CBF /* KomikliVideo */;
+			target = 366432B317F1FB5700401CBF /* Komik TV */;
 			targetProxy = 366432DD17F1FB5800401CBF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -602,7 +602,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		366432AF17F1FB5700401CBF /* Build configuration list for PBXProject "KomikliVideo" */ = {
+		366432AF17F1FB5700401CBF /* Build configuration list for PBXProject "Komik TV" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				366432E717F1FB5800401CBF /* Debug */,
@@ -611,7 +611,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		366432E917F1FB5800401CBF /* Build configuration list for PBXNativeTarget "KomikliVideo" */ = {
+		366432E917F1FB5800401CBF /* Build configuration list for PBXNativeTarget "Komik TV" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				366432EA17F1FB5800401CBF /* Debug */,
