@@ -107,6 +107,13 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         //add code here for when you hit delete
+        NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+        NSMutableArray * tableData = [[NSMutableArray alloc] init];
+        tableData = [standardUserDefaults objectForKey:@"tableData"];
+        [tableData removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationTop];
+        [standardUserDefaults setObject:tableData forKey:@"tableData"];
+        
         
     }
 }

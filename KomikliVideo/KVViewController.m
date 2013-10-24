@@ -43,6 +43,10 @@ int likecount=0;
     
     [[player scrollView] setBounces:false];
     [self playVideoWithId:@"Zn5CfRrCrIs"];
+    
+    likeCounter.text = [NSString stringWithFormat:@"%d",tableData.count];
+        
+
 }
 
 - (void)viewDidLoad
@@ -53,7 +57,18 @@ int likecount=0;
     tableData = [[NSMutableArray alloc] init];
     
     NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
-    [standardUserDefaults setObject:tableData forKey:@"tableData"];
+    
+    if ([standardUserDefaults objectForKey:@"tableData"] != nil) {
+        tableData = [standardUserDefaults objectForKey:@"tableData"];
+        likeCounter.text = [NSString stringWithFormat:@"%d",tableData.count];
+        
+        
+    } else {
+        [standardUserDefaults setObject:tableData forKey:@"tableData"];
+        likeCounter.text = [NSString stringWithFormat:@"%d",0];
+        
+    }
+    
     //[standardUserDefaults setInteger:likecount forKey:@"likeCount"];
     
     //UIFont *Dosisbold = [UIFont fontWithName:@"Dosis-Bold" size:17.0f];
