@@ -44,7 +44,7 @@ int likecount=0;
     [[player scrollView] setBounces:false];
     [self playVideoWithId:@"Zn5CfRrCrIs"];
     
-    likeCounter.text = [NSString stringWithFormat:@"%d",tableData.count];
+    //likeCounter.text = [NSString stringWithFormat:@"%lu",(unsigned long)tableData.count];
         
 
 }
@@ -106,6 +106,8 @@ int likecount=0;
     [customTitle setTextColor:UIColorFromRGB(0xb4b4b5)];
     
     self.navigationItem.titleView = customTitle;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setLikeCounter) name:@"unlike" object:Nil];
+    
     
     
 }
@@ -119,6 +121,17 @@ int likecount=0;
 - (void)playVideoWithId:(NSString *)videoId {
     NSString *html = [NSString stringWithFormat:vidBase, videoId];
     [player loadHTMLString:html baseURL:nil];
+}
+
+-(void)setLikeCounter{
+    
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray * tableData2 = [NSMutableArray arrayWithArray:[standardUserDefaults objectForKey:@"tableData"] ];
+    
+    likeCounter.text = [NSString stringWithFormat:@"%d",tableData2.count];
+    
+    
+    
 }
 
 - (IBAction)likeVideo:(id)sender {

@@ -106,13 +106,21 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSLog(@"%d", indexPath.row);
+        
         //add code here for when you hit delete
         NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
-        NSMutableArray * tableData = [[NSMutableArray alloc] init];
-        tableData = [standardUserDefaults objectForKey:@"tableData"];
+        NSMutableArray * tableData = [NSMutableArray arrayWithArray:[standardUserDefaults objectForKey:@"tableData"] ];
+        //tableData = [standardUserDefaults objectForKey:@"tableData"];
+        NSLog(@"%@", tableData);
         [tableData removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationTop];
+        
         [standardUserDefaults setObject:tableData forKey:@"tableData"];
+        [standardUserDefaults synchronize];
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationTop];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"unlike" object:Nil];
+        //NSLog(@"%d", [[standardUserDefaults objectForKey:@"tableData"] count]);
+        
         
         
     }
