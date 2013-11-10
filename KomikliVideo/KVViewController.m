@@ -162,6 +162,12 @@ int likecount=0;
 }
 
 - (IBAction)nextVideo:(id)sender {
+    NSData *data = [[NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://hgeg.io/komiktv/next/5"] encoding:NSUTF8StringEncoding error: nil] dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error = nil;
+    NSArray *next = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:&error];
+    NSLog(@"data: %@",next);
+    [self playVideoWithId:next[0][@"id"]];
+
 }
 
 - (IBAction)share:(id)sender {

@@ -61,7 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		366432B417F1FB5700401CBF /* KomikliVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KomikliVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		366432B417F1FB5700401CBF /* Komik TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Komik TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		366432B717F1FB5700401CBF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		366432B917F1FB5700401CBF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		366432BB17F1FB5700401CBF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -151,7 +151,7 @@
 		366432B517F1FB5700401CBF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				366432B417F1FB5700401CBF /* KomikliVideo.app */,
+				366432B417F1FB5700401CBF /* Komik TV.app */,
 				366432D817F1FB5800401CBF /* KomikliVideoTests.xctest */,
 			);
 			name = Products;
@@ -283,7 +283,7 @@
 			);
 			name = "Komik TV";
 			productName = KomikliVideo;
-			productReference = 366432B417F1FB5700401CBF /* KomikliVideo.app */;
+			productReference = 366432B417F1FB5700401CBF /* Komik TV.app */;
 			productType = "com.apple.product-type.application";
 		};
 		366432D717F1FB5800401CBF /* KomikliVideoTests */ = {
