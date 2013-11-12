@@ -534,7 +534,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Taner Yildirim (677762377T)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ali Can Bulbul (3KP7B3JNZE)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KomikliVideo/KomikliVideo-Prefix.pch";
 				INFOPLIST_FILE = "KomikliVideo/KomikliVideo-Info.plist";
@@ -548,7 +548,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Taner Yildirim (677762377T)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ali Can Bulbul (3KP7B3JNZE)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KomikliVideo/KomikliVideo-Prefix.pch";
 				INFOPLIST_FILE = "KomikliVideo/KomikliVideo-Info.plist";

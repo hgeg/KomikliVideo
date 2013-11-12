@@ -9,7 +9,8 @@
 #import "KVViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
 
-#define vidBase @"<html><body style=\"margin:0px;\"><iframe webkit-playsinline id=\"ytplayer\" width=\"320\" height=\"240\" src=\"http://www.youtube.com/embed/%@?feature=player_detailpage&rel=0&iautohide=1&playsinline=1&showinfo=0&autoplay=1&enablejsapi=1\" frameborder=\"0\"></iframe></body></html>"
+#define vidBase @"<html><head><script type=\"text/javascript\">function onYoutubePlayerReady(playerId) {ytplayer = document.getElementById(\"ytplayer\");ytplayer.playVideo();}</script></head><body style=\"margin:0px;background-color:#000;\"><iframe webkit-playsinline autoplay=\"autoplay\" id=\"ytplayer\" width=\"320px\" height=\"240px\" onload=\"onYoutubePlayerReady(1)\" src=\"http://www.youtube.com/embed/%@?feature=player_detailpage&rel=0&iautohide=1&playsinline=1&showinfo=0&autoplay=1&enablejsapi=1&playerapiid=ytplayer\" frameborder=\"0\"></iframe></body></html>"
+
 
 #define UIColorFromRGB(rgbValue) [UIColor \
 colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
@@ -41,7 +42,9 @@ int likecount=0;
 - (void)viewWillAppear:(BOOL)animated {
     player.allowsInlineMediaPlayback = true;
     
+    player.backgroundColor = [UIColor blackColor];
     [[player scrollView] setBounces:false];
+    [[player scrollView] setScrollEnabled:false];
     [self playVideoWithId:@"Zn5CfRrCrIs"];
     
     //likeCounter.text = [NSString stringWithFormat:@"%lu",(unsigned long)tableData.count];
@@ -66,7 +69,6 @@ int likecount=0;
     } else {
         [standardUserDefaults setObject:tableData forKey:@"tableData"];
         likeCounter.text = [NSString stringWithFormat:@"%d",0];
-        
     }
     
     //[standardUserDefaults setInteger:likecount forKey:@"likeCount"];
@@ -108,8 +110,6 @@ int likecount=0;
     self.navigationItem.titleView = customTitle;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setLikeCounter) name:@"unlike" object:Nil];
     
-    
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -119,8 +119,9 @@ int likecount=0;
 }
 
 - (void)playVideoWithId:(NSString *)videoId {
+    [player scrollView].frame = CGRectMake(0, -64, 320, 320);
     NSString *html = [NSString stringWithFormat:vidBase, videoId];
-    [player loadHTMLString:html baseURL:nil];
+    [player loadHTMLString:html baseURL:[NSURL URLWithString:@"http://youtube.com"]];
 }
 
 -(void)setLikeCounter{
@@ -129,9 +130,6 @@ int likecount=0;
     NSMutableArray * tableData2 = [NSMutableArray arrayWithArray:[standardUserDefaults objectForKey:@"tableData"] ];
     
     likeCounter.text = [NSString stringWithFormat:@"%d",tableData2.count];
-    
-    
-    
 }
 
 - (IBAction)likeVideo:(id)sender {
@@ -165,7 +163,8 @@ int likecount=0;
     NSData *data = [[NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://hgeg.io/komiktv/next/5"] encoding:NSUTF8StringEncoding error: nil] dataUsingEncoding:NSUTF8StringEncoding];
     NSError *error = nil;
     NSArray *next = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:&error];
-    NSLog(@"data: %@",next);
+    //NSLog(@"data: %@",next);
+    videoName.text = next[0][@"title"];dfjkdfdkdfskkdfs
     [self playVideoWithId:next[0][@"id"]];
 
 }
