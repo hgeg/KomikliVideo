@@ -92,7 +92,8 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
-    ((UILabel *)[cell viewWithTag:1]).text = [[standardUserDefaults objectForKey:@"tableData"] objectAtIndex:indexPath.row];
+    ((UILabel *)[cell viewWithTag:1]).text = [[standardUserDefaults objectForKey:@"tableData"] objectAtIndex:indexPath.row][@"title"];
+    
     
     [((UILabel *)[cell viewWithTag:1]) setFont:Dosismedium];
     
