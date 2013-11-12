@@ -116,6 +116,11 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
         NSMutableArray * tableData = [NSMutableArray arrayWithArray:[standardUserDefaults objectForKey:@"tableData"] ];
         //tableData = [standardUserDefaults objectForKey:@"tableData"];
         NSLog(@"%@", tableData);
+        
+        
+        [tableData removeObject:next[indexOfNext]];
+        
+        
         [tableData removeObjectAtIndex:indexPath.row];
         
         [standardUserDefaults setObject:tableData forKey:@"tableData"];

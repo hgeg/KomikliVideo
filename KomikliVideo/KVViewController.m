@@ -47,10 +47,10 @@ int likecount=0;
     player.backgroundColor = [UIColor blackColor];
     [[player scrollView] setBounces:false];
     [[player scrollView] setScrollEnabled:false];
-    */
+
     //[self playVideoWithId:@"Zn5CfRrCrIs"];
-    //[self nextVideo:self];
-    
+    [self nextVideo:self];
+    */
     
     //likeCounter.text = [NSString stringWithFormat:@"%lu",(unsigned long)tableData.count];
         
@@ -147,6 +147,22 @@ int likecount=0;
     NSMutableArray * tableData2 = [NSMutableArray arrayWithArray:[standardUserDefaults objectForKey:@"tableData"] ];
     
     likeCounter.text = [NSString stringWithFormat:@"%d",tableData2.count];
+    
+    if([tableData2 containsObject: next[indexOfNext]])
+    {
+        NSLog(@"bulundu");
+        UIImage *image = [UIImage imageNamed:@"heart_dark.png"];
+        [likeButton setImage:image forState:UIControlStateNormal];
+        likeButton.restorationIdentifier = @"0";
+    }
+    else
+    {
+        NSLog(@"bulunmadı");
+        UIImage *image = [UIImage imageNamed:@"heart_large.png"];
+        [likeButton setImage:image forState:UIControlStateNormal];
+        
+        likeButton.restorationIdentifier = @"1";
+    }
     
     
     
