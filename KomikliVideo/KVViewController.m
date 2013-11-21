@@ -170,7 +170,8 @@ int likecount=0;
 
 - (IBAction)likeVideo:(id)sender {
     
-
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray * tableData2 = [NSMutableArray arrayWithArray:[standardUserDefaults objectForKey:@"tableData"] ];
 
     
     if([likeButton.restorationIdentifier isEqualToString:@"1"])
@@ -180,9 +181,9 @@ int likecount=0;
         likeCounter.text = [NSString stringWithFormat:@"%d",[likeCounter.text intValue]+1];
         likeButton.restorationIdentifier = @"0";
         
-        [tableData addObject:next[indexOfNext]];
+        [tableData2 addObject:next[indexOfNext]];
         NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
-        [standardUserDefaults setObject:tableData forKey:@"tableData"];
+        [standardUserDefaults setObject:tableData2 forKey:@"tableData"];
     }
     else
     {
@@ -191,9 +192,9 @@ int likecount=0;
         likeCounter.text = [NSString stringWithFormat:@"%d",[likeCounter.text intValue]-1];
         likeButton.restorationIdentifier = @"1";
         
-        [tableData removeObject:next[indexOfNext]];
+        [tableData2 removeObject:next[indexOfNext]];
         NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
-        [standardUserDefaults setObject:tableData forKey:@"tableData"];
+        [standardUserDefaults setObject:tableData2 forKey:@"tableData"];
     }
     
 
@@ -209,9 +210,10 @@ int likecount=0;
     [self playVideoWithId:next[indexOfNext][@"id"]];
     
     //setLikeButton
-    
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray * tableData2 = [NSMutableArray arrayWithArray:[standardUserDefaults objectForKey:@"tableData"] ];
    
-    if([tableData containsObject: next[indexOfNext]])
+    if([tableData2 containsObject: next[indexOfNext]])
     {
         NSLog(@"bulundu");
         UIImage *image = [UIImage imageNamed:@"heart_dark.png"];
