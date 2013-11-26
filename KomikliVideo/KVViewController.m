@@ -164,7 +164,7 @@ int likecount=0;
     NSError *error = nil;
     NSArray *next = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:&error];
     //NSLog(@"data: %@",next);
-    videoName.text = next[0][@"title"];dfjkdfdkdfskkdfs
+    videoName.text = next[0][@"title"];
     [self playVideoWithId:next[0][@"id"]];
 
 }
