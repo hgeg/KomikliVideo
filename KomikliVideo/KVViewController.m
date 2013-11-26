@@ -35,17 +35,22 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @synthesize likesButton;
 @synthesize likeCounter;
 NSMutableArray *tableData;
+NSArray *next;
+int indexOfNext=-1;
 int likecount=0;
 
 
 
 - (void)viewWillAppear:(BOOL)animated {
-    player.allowsInlineMediaPlayback = true;
+    /*player.allowsInlineMediaPlayback = true;
     
     player.backgroundColor = [UIColor blackColor];
     [[player scrollView] setBounces:false];
     [[player scrollView] setScrollEnabled:false];
-    [self playVideoWithId:@"Zn5CfRrCrIs"];
+
+    //[self playVideoWithId:@"Zn5CfRrCrIs"];
+    [self nextVideo:self];
+    */
     
     //likeCounter.text = [NSString stringWithFormat:@"%lu",(unsigned long)tableData.count];
         
@@ -107,8 +112,20 @@ int likecount=0;
     [customTitle setFont: Dosisbook];
     [customTitle setTextColor:UIColorFromRGB(0xb4b4b5)];
     
+    
+    player.allowsInlineMediaPlayback = true;
+    
+    player.backgroundColor = [UIColor blackColor];
+    [[player scrollView] setBounces:false];
+    [[player scrollView] setScrollEnabled:false];
+    [self nextVideo:self];
+    
     self.navigationItem.titleView = customTitle;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setLikeCounter) name:@"unlike" object:Nil];
+    
+    //checking if video liked
+    
+    
     
 }
 
@@ -130,9 +147,33 @@ int likecount=0;
     NSMutableArray * tableData2 = [NSMutableArray arrayWithArray:[standardUserDefaults objectForKey:@"tableData"] ];
     
     likeCounter.text = [NSString stringWithFormat:@"%d",tableData2.count];
+    
+    if([tableData2 containsObject: next[indexOfNext]])
+    {
+        NSLog(@"bulundu");
+        UIImage *image = [UIImage imageNamed:@"heart_dark.png"];
+        [likeButton setImage:image forState:UIControlStateNormal];
+        likeButton.restorationIdentifier = @"0";
+    }
+    else
+    {
+        NSLog(@"bulunmadı");
+        UIImage *image = [UIImage imageNamed:@"heart_large.png"];
+        [likeButton setImage:image forState:UIControlStateNormal];
+        
+        likeButton.restorationIdentifier = @"1";
+    }
+    
+    
+    
 }
 
 - (IBAction)likeVideo:(id)sender {
+    
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray * tableData2 = [NSMutableArray arrayWithArray:[standardUserDefaults objectForKey:@"tableData"] ];
+
+    
     if([likeButton.restorationIdentifier isEqualToString:@"1"])
     {
         UIImage *image = [UIImage imageNamed:@"heart_dark.png"];
@@ -140,9 +181,9 @@ int likecount=0;
         likeCounter.text = [NSString stringWithFormat:@"%d",[likeCounter.text intValue]+1];
         likeButton.restorationIdentifier = @"0";
         
-        [tableData addObject:videoName.text];
+        [tableData2 addObject:next[indexOfNext]];
         NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
-        [standardUserDefaults setObject:tableData forKey:@"tableData"];
+        [standardUserDefaults setObject:tableData2 forKey:@"tableData"];
     }
     else
     {
@@ -151,21 +192,43 @@ int likecount=0;
         likeCounter.text = [NSString stringWithFormat:@"%d",[likeCounter.text intValue]-1];
         likeButton.restorationIdentifier = @"1";
         
-        [tableData removeObject:videoName.text];
+        [tableData2 removeObject:next[indexOfNext]];
         NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
-        [standardUserDefaults setObject:tableData forKey:@"tableData"];
+        [standardUserDefaults setObject:tableData2 forKey:@"tableData"];
     }
     
-    
+
 }
 
 - (IBAction)nextVideo:(id)sender {
+   indexOfNext++;
     NSData *data = [[NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://hgeg.io/komiktv/next/5"] encoding:NSUTF8StringEncoding error: nil] dataUsingEncoding:NSUTF8StringEncoding];
     NSError *error = nil;
-    NSArray *next = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:&error];
+    next = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:&error];
     //NSLog(@"data: %@",next);
-    videoName.text = next[0][@"title"];
-    [self playVideoWithId:next[0][@"id"]];
+    videoName.text = next[indexOfNext][@"title"];
+    [self playVideoWithId:next[indexOfNext][@"id"]];
+    
+    //setLikeButton
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray * tableData2 = [NSMutableArray arrayWithArray:[standardUserDefaults objectForKey:@"tableData"] ];
+   
+    if([tableData2 containsObject: next[indexOfNext]])
+    {
+        NSLog(@"bulundu");
+        UIImage *image = [UIImage imageNamed:@"heart_dark.png"];
+        [likeButton setImage:image forState:UIControlStateNormal];
+        likeButton.restorationIdentifier = @"0";
+    }
+    else
+    {
+        NSLog(@"bulunmadı");
+        UIImage *image = [UIImage imageNamed:@"heart_large.png"];
+        [likeButton setImage:image forState:UIControlStateNormal];
+        
+        likeButton.restorationIdentifier = @"1";
+    }
+>>>>>>> ecc924326def4ca940e81b90fe2d529107a16d93
 
 }
 
