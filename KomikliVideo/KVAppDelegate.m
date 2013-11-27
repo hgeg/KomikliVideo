@@ -21,7 +21,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     //[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x000000)];
     
     [[UINavigationBar appearance] setTintColor:UIColorFromRGB(0x00bfb5)];
-    
+    NSString *login = [NSString stringWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://hgeg.io/komiktv/register/%@/",uid]] encoding:NSUTF8StringEncoding error: nil];
     
     return YES;
 }

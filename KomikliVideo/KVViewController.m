@@ -7,7 +7,6 @@
 //
 
 #import "KVViewController.h"
-#import <MediaPlayer/MediaPlayer.h>
 
 #define vidBase @"<html><head><script type=\"text/javascript\">function onYoutubePlayerReady(playerId) {ytplayer = document.getElementById(\"ytplayer\");ytplayer.playVideo();}</script></head><body style=\"margin:0px;background-color:#000;\"><iframe webkit-playsinline autoplay=\"autoplay\" id=\"ytplayer\" width=\"320px\" height=\"240px\" onload=\"onYoutubePlayerReady(1)\" src=\"http://www.youtube.com/embed/%@?feature=player_detailpage&rel=0&iautohide=1&playsinline=1&showinfo=0&autoplay=1&enablejsapi=1&playerapiid=ytplayer\" frameborder=\"0\"></iframe></body></html>"
 
@@ -34,12 +33,6 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @synthesize shuffleButton;
 @synthesize likesButton;
 @synthesize likeCounter;
-NSMutableArray *tableData;
-NSArray *next;
-int indexOfNext=-1;
-int likecount=0;
-
-
 
 - (void)viewWillAppear:(BOOL)animated {
     /*player.allowsInlineMediaPlayback = true;
@@ -61,6 +54,11 @@ int likecount=0;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    NSError *error;
+    NSLog(@"%@",[NSString stringWithContentsOfURL:[NSURL URLWithString:f(@"http://hgeg.io/komiktv/next/%@/20/",uid)] encoding:NSUTF8StringEncoding error: &error]);
+    NSLog(@"error: %@",error);
+    NSData *data = [[NSString stringWithContentsOfURL:[NSURL URLWithString:f(@"http://hgeg.io/komiktv/next/%@/20/",uid)] encoding:NSUTF8StringEncoding error: nil] dataUsingEncoding:NSUTF8StringEncoding];
+    videos = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
     
     tableData = [[NSMutableArray alloc] init];
     
@@ -123,10 +121,7 @@ int likecount=0;
     self.navigationItem.titleView = customTitle;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setLikeCounter) name:@"unlike" object:Nil];
     
-    //checking if video liked
-    
-    
-    
+    NC_addObserver(@"playVideo", @selector(playVideoWithObject:));
 }
 
 - (void)didReceiveMemoryWarning
@@ -141,6 +136,15 @@ int likecount=0;
     [player loadHTMLString:html baseURL:[NSURL URLWithString:@"http://youtube.com"]];
 }
 
+- (void)playVideoWithObject:(NSNotification *)object {
+    NSDictionary *video = object.object;
+    NSLog(@"id: %@",video);
+    [player scrollView].frame = CGRectMake(0, -64, 320, 320);
+    NSString *html = [NSString stringWithFormat:vidBase, video[@"id"]];
+    videoName.text = video[@"title"];
+    [player loadHTMLString:html baseURL:[NSURL URLWithString:@"http://youtube.com"]];
+}
+
 -(void)setLikeCounter{
     
     NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
@@ -148,7 +152,7 @@ int likecount=0;
     
     likeCounter.text = [NSString stringWithFormat:@"%d",tableData2.count];
     
-    if([tableData2 containsObject: next[indexOfNext]])
+    if([tableData2 containsObject: next])
     {
         NSLog(@"bulundu");
         UIImage *image = [UIImage imageNamed:@"heart_dark.png"];
@@ -181,7 +185,7 @@ int likecount=0;
         likeCounter.text = [NSString stringWithFormat:@"%d",[likeCounter.text intValue]+1];
         likeButton.restorationIdentifier = @"0";
         
-        [tableData2 addObject:next[indexOfNext]];
+        [tableData2 addObject:next];
         NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
         [standardUserDefaults setObject:tableData2 forKey:@"tableData"];
     }
@@ -192,7 +196,7 @@ int likecount=0;
         likeCounter.text = [NSString stringWithFormat:@"%d",[likeCounter.text intValue]-1];
         likeButton.restorationIdentifier = @"1";
         
-        [tableData2 removeObject:next[indexOfNext]];
+        [tableData2 removeObject:next];
         NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
         [standardUserDefaults setObject:tableData2 forKey:@"tableData"];
     }
@@ -201,19 +205,19 @@ int likecount=0;
 }
 
 - (IBAction)nextVideo:(id)sender {
-   indexOfNext++;
-    NSData *data = [[NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://hgeg.io/komiktv/next/5"] encoding:NSUTF8StringEncoding error: nil] dataUsingEncoding:NSUTF8StringEncoding];
-    NSError *error = nil;
-    next = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:&error];
-    //NSLog(@"data: %@",next);
-    videoName.text = next[indexOfNext][@"title"];
-    [self playVideoWithId:next[indexOfNext][@"id"]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:f(@"http://hgeg.io/komiktv/watched/%@/%@/",uid,next[@"id"])]];
+    NSLog(@"watch: %@",f(@"http://hgeg.io/komiktv/watched/%@/%@/",uid,next[@"id"]));
+    NSURLConnection *c = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    next = videos[indexOfNext];
+     
+    videoName.text = next[@"title"];
+    [self playVideoWithId:next[@"id"]];
     
     //setLikeButton
     NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray * tableData2 = [NSMutableArray arrayWithArray:[standardUserDefaults objectForKey:@"tableData"] ];
    
-    if([tableData2 containsObject: next[indexOfNext]])
+    if([tableData2 containsObject: next])
     {
         NSLog(@"bulundu");
         UIImage *image = [UIImage imageNamed:@"heart_dark.png"];
@@ -228,10 +232,22 @@ int likecount=0;
         
         likeButton.restorationIdentifier = @"1";
     }
->>>>>>> ecc924326def4ca940e81b90fe2d529107a16d93
+    if (indexOfNext >= [videos count]) {
+        NSData *data = [[NSString stringWithContentsOfURL:[NSURL URLWithString:f(@"http://hgeg.io/komiktv/next/%@/20/",uid)] encoding:NSUTF8StringEncoding error: nil] dataUsingEncoding:NSUTF8StringEncoding];
+        videos = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
+    }
+    indexOfNext++;
 
 }
 
 - (IBAction)share:(id)sender {
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    NSLog(@"Conn error: %@",error);
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    NSLog(@"retval: %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
 }
 @end

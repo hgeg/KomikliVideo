@@ -45,8 +45,6 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     UIFont *Dosissemibold = [UIFont fontWithName:@"Dosis-SemiBold" size:17.0f];
     */
     
-    
-    
     UILabel *customTitle = [[UILabel alloc] init];
     [customTitle setFrame:CGRectMake(0,5,50,20)];
     customTitle.text = @"Komik TV";
@@ -54,9 +52,6 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     [customTitle setTextColor:UIColorFromRGB(0xb4b4b5)];
     
     self.navigationItem.titleView = customTitle;
-    
-   
-    
     
 }
 
@@ -104,6 +99,12 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return YES if you want the specified item to be editable.
     return YES;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NC_postNotification(@"playVideo", ((NSArray *)UD_getObj(@"tableData"))[indexPath.row]);
+    [self.navigationController popViewControllerAnimated:true];
+    
 }
 
 // Override to support editing the table view.

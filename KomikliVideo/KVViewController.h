@@ -10,7 +10,14 @@
 #import "LBYouTube.h"
 #import <Twitter/Twitter.h>
 
-@interface KVViewController : UIViewController
+@interface KVViewController : UIViewController <NSURLConnectionDelegate>
+
+{
+    NSArray *videos;
+    int indexOfNext;
+    NSDictionary *next;
+    NSMutableArray *tableData;
+}
 @property (weak, nonatomic) IBOutlet UIWebView *player;
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
