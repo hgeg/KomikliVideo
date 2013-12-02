@@ -9,7 +9,7 @@
 #import "KVViewController.h"
 #import <Accounts/Accounts.h>
 
-#define vidBase @"<html><body style=\"margin:0;padding:0;background-color:#000;\"><iframe webkit-playsinline autoplay=\"autoplay\" id=\"ytplayer\" width=\"320px\" height=\"240px\" src=\"http://www.youtube.com/embed/%@?feature=player_detailpage&rel=0&iautohide=1&playsinline=1&showinfo=0&autoplay=1&enablejsapi=1&playerapiid=ytplayer\" frameborder=\"0\"></iframe></body></html>"
+#define vidBase @"<html><body style=\"margin:0;padding:0;background-color:#000;\"><iframe webkit-playsinline autoplay=\"autoplay\" id=\"ytplayer\" width=\"%dpx\" height=\"%dpx\" src=\"http://www.youtube.com/embed/%@?feature=player_detailpage&rel=0&iautohide=1&playsinline=1&showinfo=0&autoplay=1&enablejsapi=1&playerapiid=ytplayer\" frameborder=\"0\"></iframe></body></html>"
 
 
 #define UIColorFromRGB(rgbValue) [UIColor \
@@ -134,7 +134,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 }
 
 - (void)playVideoWithId:(NSString *)videoId {
-    NSString *html = [NSString stringWithFormat:vidBase, videoId];
+    NSString *html = [NSString stringWithFormat:vidBase, (int)player.frame.size.width, (int)player.frame.size.height, videoId];
     [player loadHTMLString:html baseURL:[NSURL URLWithString:@"http://youtube.com"]];
 }
 
@@ -142,7 +142,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     NSDictionary *video = object.object;
     
     NSLog(@"id: %@",video);
-    NSString *html = [NSString stringWithFormat:vidBase, video[@"id"]];
+    NSString *html = [NSString stringWithFormat:vidBase, (int)player.frame.size.width, (int)player.frame.size.height, video[@"id"]];
     videoName.text = video[@"title"];
     [self setLikeCounter];
     [player loadHTMLString:html baseURL:[NSURL URLWithString:@"http://youtube.com"]];
