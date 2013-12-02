@@ -44,3 +44,8 @@
 
 #define NC_addObserver(n,sel) [[NSNotificationCenter defaultCenter] addObserver:self selector:sel name:n object:nil]
 #define NC_postNotification(n,obj) [[NSNotificationCenter defaultCenter] postNotificationName:n object:obj]
+
+//CGShapes
+#define point(x,y) CGPointMake(x,y)
+#define rect(x,y,w,h) CGRectMake(x,y,w,h)
+
