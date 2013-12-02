@@ -25,6 +25,7 @@
 		366432F517F2090E00401CBF /* LBYouTubeExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 366432F217F2090E00401CBF /* LBYouTubeExtractor.m */; };
 		366432F617F2090E00401CBF /* LBYouTubePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 366432F417F2090E00401CBF /* LBYouTubePlayerViewController.m */; };
 		366432F817F21FE100401CBF /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366432F717F21FE100401CBF /* MediaPlayer.framework */; };
+		D46CFA31184CD13800200649 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D46CFA30184CD13800200649 /* AdSupport.framework */; };
 		D4F641E5184C966C00BE73DA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F641E4184C966C00BE73DA /* Accounts.framework */; };
 		D4F641E7184C967400BE73DA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F641E6184C967400BE73DA /* Social.framework */; };
 		DC77BE8B180EB8CF00ECF312 /* arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = DC77BE7C180EB8CF00ECF312 /* arrow_down.png */; };
@@ -89,6 +90,7 @@
 		366432F317F2090E00401CBF /* LBYouTubePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBYouTubePlayerViewController.h; sourceTree = "<group>"; };
 		366432F417F2090E00401CBF /* LBYouTubePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBYouTubePlayerViewController.m; sourceTree = "<group>"; };
 		366432F717F21FE100401CBF /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		D46CFA30184CD13800200649 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		D4F641E4184C966C00BE73DA /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		D4F641E6184C967400BE73DA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		DC77BE7C180EB8CF00ECF312 /* arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_down.png; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D46CFA31184CD13800200649 /* AdSupport.framework in Frameworks */,
 				D4F641E7184C967400BE73DA /* Social.framework in Frameworks */,
 				D4F641E5184C966C00BE73DA /* Accounts.framework in Frameworks */,
 				366432F817F21FE100401CBF /* MediaPlayer.framework in Frameworks */,
@@ -166,6 +169,7 @@
 		366432B617F1FB5700401CBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D46CFA30184CD13800200649 /* AdSupport.framework */,
 				D4F641E6184C967400BE73DA /* Social.framework */,
 				D4F641E4184C966C00BE73DA /* Accounts.framework */,
 				366432F717F21FE100401CBF /* MediaPlayer.framework */,

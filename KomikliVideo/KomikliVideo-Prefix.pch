@@ -20,9 +20,12 @@
 #define rgb(r,g,b) rgba(r,g,b,255);
 #define hex(val) [UIColor colorWithRed:((float)((val&0xFF0000)>>16))/255.0 green:((float)((val&0xFF00)>>8))/255.0 blue:((float)(val&0xFF))/255.0 alpha:1]
 
-
 //device information
-#define uid [[[UIDevice currentDevice] identifierForVendor] UUIDString]
+#if TARGET_IPHONE_SIMULATOR
+    #define uid @"7D3A922C-04C3-40D7-9F8F-BD85BEEF8836"
+#else
+    #define uid [[[UIDevice currentDevice] identifierForVendor] UUIDString]
+#endif
 #define isIPad   (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 #define isIPhone (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 
