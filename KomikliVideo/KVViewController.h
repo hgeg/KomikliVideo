@@ -17,6 +17,7 @@
     int indexOfNext;
     NSDictionary *next;
     NSMutableArray *tableData;
+    UIActivityViewController *activityViewController;
 }
 @property (weak, nonatomic) IBOutlet UIWebView *player;
 @property (weak, nonatomic) IBOutlet UIView *topView;

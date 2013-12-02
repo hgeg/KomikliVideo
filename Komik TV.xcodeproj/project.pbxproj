@@ -25,6 +25,8 @@
 		366432F517F2090E00401CBF /* LBYouTubeExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 366432F217F2090E00401CBF /* LBYouTubeExtractor.m */; };
 		366432F617F2090E00401CBF /* LBYouTubePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 366432F417F2090E00401CBF /* LBYouTubePlayerViewController.m */; };
 		366432F817F21FE100401CBF /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366432F717F21FE100401CBF /* MediaPlayer.framework */; };
+		D4F641E5184C966C00BE73DA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F641E4184C966C00BE73DA /* Accounts.framework */; };
+		D4F641E7184C967400BE73DA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F641E6184C967400BE73DA /* Social.framework */; };
 		DC77BE8B180EB8CF00ECF312 /* arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = DC77BE7C180EB8CF00ECF312 /* arrow_down.png */; };
 		DC77BE8C180EB8CF00ECF312 /* arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = DC77BE7D180EB8CF00ECF312 /* arrow_right.png */; };
 		DC77BE8D180EB8CF00ECF312 /* column.png in Resources */ = {isa = PBXBuildFile; fileRef = DC77BE7E180EB8CF00ECF312 /* column.png */; };
@@ -87,6 +89,8 @@
 		366432F317F2090E00401CBF /* LBYouTubePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBYouTubePlayerViewController.h; sourceTree = "<group>"; };
 		366432F417F2090E00401CBF /* LBYouTubePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBYouTubePlayerViewController.m; sourceTree = "<group>"; };
 		366432F717F21FE100401CBF /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		D4F641E4184C966C00BE73DA /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		D4F641E6184C967400BE73DA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		DC77BE7C180EB8CF00ECF312 /* arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_down.png; sourceTree = "<group>"; };
 		DC77BE7D180EB8CF00ECF312 /* arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_right.png; sourceTree = "<group>"; };
 		DC77BE7E180EB8CF00ECF312 /* column.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = column.png; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4F641E7184C967400BE73DA /* Social.framework in Frameworks */,
+				D4F641E5184C966C00BE73DA /* Accounts.framework in Frameworks */,
 				366432F817F21FE100401CBF /* MediaPlayer.framework in Frameworks */,
 				366432BA17F1FB5700401CBF /* CoreGraphics.framework in Frameworks */,
 				366432BC17F1FB5700401CBF /* UIKit.framework in Frameworks */,
@@ -160,6 +166,8 @@
 		366432B617F1FB5700401CBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D4F641E6184C967400BE73DA /* Social.framework */,
+				D4F641E4184C966C00BE73DA /* Accounts.framework */,
 				366432F717F21FE100401CBF /* MediaPlayer.framework */,
 				366432B717F1FB5700401CBF /* Foundation.framework */,
 				366432B917F1FB5700401CBF /* CoreGraphics.framework */,
@@ -534,11 +542,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Taner Yildirim (677762377T)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ali Can Bulbul (3KP7B3JNZE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KomikliVideo/KomikliVideo-Prefix.pch";
 				INFOPLIST_FILE = "KomikliVideo/KomikliVideo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -548,11 +558,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Taner Yildirim (677762377T)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ali Can Bulbul (3KP7B3JNZE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KomikliVideo/KomikliVideo-Prefix.pch";
 				INFOPLIST_FILE = "KomikliVideo/KomikliVideo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

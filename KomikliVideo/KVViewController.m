@@ -7,6 +7,7 @@
 //
 
 #import "KVViewController.h"
+#import <Accounts/Accounts.h>
 
 #define vidBase @"<html><head><script type=\"text/javascript\">function onYoutubePlayerReady(playerId) {ytplayer = document.getElementById(\"ytplayer\");ytplayer.playVideo();}</script></head><body style=\"margin:0px;background-color:#000;\"><iframe webkit-playsinline autoplay=\"autoplay\" id=\"ytplayer\" width=\"320px\" height=\"240px\" onload=\"onYoutubePlayerReady(1)\" src=\"http://www.youtube.com/embed/%@?feature=player_detailpage&rel=0&iautohide=1&playsinline=1&showinfo=0&autoplay=1&enablejsapi=1&playerapiid=ytplayer\" frameborder=\"0\"></iframe></body></html>"
 
@@ -33,6 +34,10 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @synthesize shuffleButton;
 @synthesize likesButton;
 @synthesize likeCounter;
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationPortrait;
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     /*player.allowsInlineMediaPlayback = true;
@@ -66,9 +71,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     
     if ([standardUserDefaults objectForKey:@"tableData"] != nil) {
         tableData = [standardUserDefaults objectForKey:@"tableData"];
-        likeCounter.text = [NSString stringWithFormat:@"%d",tableData.count];
-        
-        
+        likeCounter.text = [NSString stringWithFormat:@"%d",[tableData count]];
     } else {
         [standardUserDefaults setObject:tableData forKey:@"tableData"];
         likeCounter.text = [NSString stringWithFormat:@"%d",0];
@@ -116,6 +119,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     player.backgroundColor = [UIColor blackColor];
     [[player scrollView] setBounces:false];
     [[player scrollView] setScrollEnabled:false];
+    [self playVideoWithId:@"sadsad"];
     [self nextVideo:self];
     
     self.navigationItem.titleView = customTitle;
@@ -138,10 +142,12 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 - (void)playVideoWithObject:(NSNotification *)object {
     NSDictionary *video = object.object;
+    
     NSLog(@"id: %@",video);
     [player scrollView].frame = CGRectMake(0, -64, 320, 320);
     NSString *html = [NSString stringWithFormat:vidBase, video[@"id"]];
     videoName.text = video[@"title"];
+    [self setLikeCounter];
     [player loadHTMLString:html baseURL:[NSURL URLWithString:@"http://youtube.com"]];
 }
 
@@ -240,7 +246,18 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 }
 
-- (IBAction)share:(id)sender {
+-(IBAction)share:(id)sender{
+    NSURL *movieURL = [NSURL URLWithString:f(@"http://www.youtu.be/%@",next[@"id"])];
+    
+    NSArray* dataToShare = @[movieURL,@""];
+    
+    activityViewController =
+    [[UIActivityViewController alloc] initWithActivityItems:dataToShare applicationActivities:nil];
+    
+    [activityViewController setExcludedActivityTypes:@[UIActivityTypePrint,UIActivityTypePostToWeibo,UIActivityTypeMessage,UIActivityTypeCopyToPasteboard,UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll,UIActivityTypeMail,UIActivityTypeAirDrop,UIActivityTypeAddToReadingList]];
+    [activityViewController setTitle:@"Videoyu paylaş"];
+    
+    [self presentViewController:activityViewController animated:YES completion:^{}];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
@@ -250,4 +267,5 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     NSLog(@"retval: %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
 }
+
 @end
