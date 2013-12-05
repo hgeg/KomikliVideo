@@ -262,9 +262,8 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 }
 
 -(IBAction)share:(id)sender{
-    NSURL *movieURL = [NSURL URLWithString:f(@"http://www.youtu.be/%@",next[@"id"])];
     
-    NSArray* dataToShare = @[movieURL,@""];
+    NSArray* dataToShare = @[f(@"http://www.youtu.be/%@",next[@"id"]),@""];
     
     activityViewController =
     [[UIActivityViewController alloc] initWithActivityItems:dataToShare applicationActivities:nil];
