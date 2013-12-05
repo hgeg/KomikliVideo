@@ -57,6 +57,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    indexOfNext = -1;
 	// Do any additional setup after loading the view, typically from a nib.
     NSError *error;
     NSLog(@"%@",[NSString stringWithContentsOfURL:[NSURL URLWithString:f(@"http://hgeg.io/komiktv/next/%@/20/",uid)] encoding:NSUTF8StringEncoding error: &error]);
@@ -224,6 +225,12 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 }
 
 - (IBAction)nextVideo:(id)sender {
+    indexOfNext++;
+    if (indexOfNext >= [videos count]) {
+        NSData *data = [[NSString stringWithContentsOfURL:[NSURL URLWithString:f(@"http://hgeg.io/komiktv/next/%@/20/",uid)] encoding:NSUTF8StringEncoding error: nil] dataUsingEncoding:NSUTF8StringEncoding];
+        videos = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
+        indexOfNext = -1;
+    }
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:f(@"http://hgeg.io/komiktv/watched/%@/%@/",uid,next[@"id"])]];
     NSLog(@"watch: %@",[NSURL URLWithString:f(@"http://hgeg.io/komiktv/watched/%@/%@/",uid,next[@"id"])]);
     NSURLConnection *c = [[NSURLConnection alloc] initWithRequest:request delegate:self];
@@ -250,12 +257,6 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
         [likeButton setImage:image forState:UIControlStateNormal];
         
         likeButton.restorationIdentifier = @"1";
-    }
-    indexOfNext++;
-    if (indexOfNext >= [videos count]) {
-        NSData *data = [[NSString stringWithContentsOfURL:[NSURL URLWithString:f(@"http://hgeg.io/komiktv/next/%@/20/",uid)] encoding:NSUTF8StringEncoding error: nil] dataUsingEncoding:NSUTF8StringEncoding];
-        videos = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
-        indexOfNext = 0;
     }
 
 }
