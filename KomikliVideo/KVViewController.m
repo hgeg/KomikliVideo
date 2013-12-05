@@ -144,7 +144,24 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     NSLog(@"id: %@",video);
     NSString *html = [NSString stringWithFormat:vidBase, (int)player.frame.size.width, (int)player.frame.size.height, video[@"id"]];
     videoName.text = video[@"title"];
-    [self setLikeCounter];
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray * tableData2 = [NSMutableArray arrayWithArray:[standardUserDefaults objectForKey:@"tableData"] ];
+    
+    if([tableData2 containsObject: video])
+    {
+        NSLog(@"bulundu");
+        UIImage *image = [UIImage imageNamed:@"heart_red.png"];
+        [likeButton setImage:image forState:UIControlStateNormal];
+        likeButton.restorationIdentifier = @"0";
+    }
+    else
+    {
+        NSLog(@"bulunmadı");
+        UIImage *image = [UIImage imageNamed:@"heart_large.png"];
+        [likeButton setImage:image forState:UIControlStateNormal];
+        
+        likeButton.restorationIdentifier = @"1";
+    }
     [player loadHTMLString:html baseURL:[NSURL URLWithString:@"http://youtube.com"]];
 }
 
@@ -158,7 +175,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     if([tableData2 containsObject: next])
     {
         NSLog(@"bulundu");
-        UIImage *image = [UIImage imageNamed:@"heart_dark.png"];
+        UIImage *image = [UIImage imageNamed:@"heart_red.png"];
         [likeButton setImage:image forState:UIControlStateNormal];
         likeButton.restorationIdentifier = @"0";
     }
@@ -183,7 +200,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     
     if([likeButton.restorationIdentifier isEqualToString:@"1"])
     {
-        UIImage *image = [UIImage imageNamed:@"heart_dark.png"];
+        UIImage *image = [UIImage imageNamed:@"heart_red.png"];
         [sender setImage:image forState:UIControlStateNormal];
         likeCounter.text = [NSString stringWithFormat:@"%d",[likeCounter.text intValue]+1];
         likeButton.restorationIdentifier = @"0";
@@ -223,7 +240,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     if([tableData2 containsObject: next])
     {
         NSLog(@"bulundu");
-        UIImage *image = [UIImage imageNamed:@"heart_dark.png"];
+        UIImage *image = [UIImage imageNamed:@"heart_red.png"];
         [likeButton setImage:image forState:UIControlStateNormal];
         likeButton.restorationIdentifier = @"0";
     }

@@ -33,7 +33,6 @@
 		DC77BE8D180EB8CF00ECF312 /* column.png in Resources */ = {isa = PBXBuildFile; fileRef = DC77BE7E180EB8CF00ECF312 /* column.png */; };
 		DC77BE8E180EB8CF00ECF312 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = DC77BE7F180EB8CF00ECF312 /* cross.png */; };
 		DC77BE8F180EB8CF00ECF312 /* delete_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = DC77BE80180EB8CF00ECF312 /* delete_bg.png */; };
-		DC77BE90180EB8CF00ECF312 /* heart_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = DC77BE81180EB8CF00ECF312 /* heart_dark.png */; };
 		DC77BE91180EB8CF00ECF312 /* heart_large.png in Resources */ = {isa = PBXBuildFile; fileRef = DC77BE82180EB8CF00ECF312 /* heart_large.png */; };
 		DC77BE92180EB8CF00ECF312 /* heart_small.png in Resources */ = {isa = PBXBuildFile; fileRef = DC77BE83180EB8CF00ECF312 /* heart_small.png */; };
 		DC77BE93180EB8CF00ECF312 /* infinity.png in Resources */ = {isa = PBXBuildFile; fileRef = DC77BE84180EB8CF00ECF312 /* infinity.png */; };
@@ -51,6 +50,8 @@
 		DC77BEA6180EBEAE00ECF312 /* Dosis-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC77BE9F180EBEAE00ECF312 /* Dosis-Medium.ttf */; };
 		DC77BEA7180EBEAE00ECF312 /* Dosis-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC77BEA0180EBEAE00ECF312 /* Dosis-SemiBold.ttf */; };
 		DC77BEB2180EE31000ECF312 /* KVBegendiklerimViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC77BEB1180EE30F00ECF312 /* KVBegendiklerimViewController.m */; };
+		DC811717185097BD00465708 /* heart_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = DC811716185097BD00465708 /* heart_dark.png */; };
+		DC811719185097C400465708 /* heart_red.png in Resources */ = {isa = PBXBuildFile; fileRef = DC811718185097C400465708 /* heart_red.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,7 +99,6 @@
 		DC77BE7E180EB8CF00ECF312 /* column.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = column.png; sourceTree = "<group>"; };
 		DC77BE7F180EB8CF00ECF312 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
 		DC77BE80180EB8CF00ECF312 /* delete_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete_bg.png; sourceTree = "<group>"; };
-		DC77BE81180EB8CF00ECF312 /* heart_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart_dark.png; sourceTree = "<group>"; };
 		DC77BE82180EB8CF00ECF312 /* heart_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart_large.png; sourceTree = "<group>"; };
 		DC77BE83180EB8CF00ECF312 /* heart_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart_small.png; sourceTree = "<group>"; };
 		DC77BE84180EB8CF00ECF312 /* infinity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = infinity.png; sourceTree = "<group>"; };
@@ -117,6 +117,8 @@
 		DC77BEA0180EBEAE00ECF312 /* Dosis-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-SemiBold.ttf"; sourceTree = "<group>"; };
 		DC77BEB0180EE30F00ECF312 /* KVBegendiklerimViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVBegendiklerimViewController.h; sourceTree = "<group>"; };
 		DC77BEB1180EE30F00ECF312 /* KVBegendiklerimViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVBegendiklerimViewController.m; sourceTree = "<group>"; };
+		DC811716185097BD00465708 /* heart_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart_dark.png; sourceTree = "<group>"; };
+		DC811718185097C400465708 /* heart_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart_red.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,11 +252,12 @@
 				DC77BE7E180EB8CF00ECF312 /* column.png */,
 				DC77BE7F180EB8CF00ECF312 /* cross.png */,
 				DC77BE80180EB8CF00ECF312 /* delete_bg.png */,
-				DC77BE81180EB8CF00ECF312 /* heart_dark.png */,
 				DC77BE82180EB8CF00ECF312 /* heart_large.png */,
+				DC811718185097C400465708 /* heart_red.png */,
 				DC77BE83180EB8CF00ECF312 /* heart_small.png */,
 				DC77BE84180EB8CF00ECF312 /* infinity.png */,
 				DC77BE85180EB8CF00ECF312 /* line_green.png */,
+				DC811716185097BD00465708 /* heart_dark.png */,
 				DC77BE86180EB8CF00ECF312 /* next.png */,
 				DC77BE87180EB8CF00ECF312 /* placeholder.png */,
 				DC77BE88180EB8CF00ECF312 /* row.png */,
@@ -281,9 +284,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		366432B317F1FB5700401CBF /* Komik TV */ = {
+		366432B317F1FB5700401CBF /* FenoVid */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 366432E917F1FB5800401CBF /* Build configuration list for PBXNativeTarget "Komik TV" */;
+			buildConfigurationList = 366432E917F1FB5800401CBF /* Build configuration list for PBXNativeTarget "FenoVid" */;
 			buildPhases = (
 				366432B017F1FB5700401CBF /* Sources */,
 				366432B117F1FB5700401CBF /* Frameworks */,
@@ -293,7 +296,7 @@
 			);
 			dependencies = (
 			);
-			name = "Komik TV";
+			name = FenoVid;
 			productName = KomikliVideo;
 			productReference = 366432B417F1FB5700401CBF /* Komik TV.app */;
 			productType = "com.apple.product-type.application";
@@ -347,7 +350,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				366432B317F1FB5700401CBF /* Komik TV */,
+				366432B317F1FB5700401CBF /* FenoVid */,
 				366432D717F1FB5800401CBF /* KomikliVideoTests */,
 			);
 		};
@@ -374,15 +377,16 @@
 				DC77BEA4180EBEAE00ECF312 /* Dosis-ExtraLight.ttf in Resources */,
 				DC77BE8F180EB8CF00ECF312 /* delete_bg.png in Resources */,
 				DC77BE92180EB8CF00ECF312 /* heart_small.png in Resources */,
+				DC811717185097BD00465708 /* heart_dark.png in Resources */,
 				DC77BE8B180EB8CF00ECF312 /* arrow_down.png in Resources */,
 				DC77BE99180EB8CF00ECF312 /* shuffle.png in Resources */,
 				DC77BEA1180EBEAE00ECF312 /* Dosis-Bold.ttf in Resources */,
 				DC77BE8D180EB8CF00ECF312 /* column.png in Resources */,
+				DC811719185097C400465708 /* heart_red.png in Resources */,
 				DC77BEA7180EBEAE00ECF312 /* Dosis-SemiBold.ttf in Resources */,
 				DC77BEA3180EBEAE00ECF312 /* Dosis-ExtraBold.ttf in Resources */,
 				DC77BE95180EB8CF00ECF312 /* next.png in Resources */,
 				DC77BE8E180EB8CF00ECF312 /* cross.png in Resources */,
-				DC77BE90180EB8CF00ECF312 /* heart_dark.png in Resources */,
 				366432C217F1FB5800401CBF /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,7 +428,7 @@
 /* Begin PBXTargetDependency section */
 		366432DE17F1FB5800401CBF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 366432B317F1FB5700401CBF /* Komik TV */;
+			target = 366432B317F1FB5700401CBF /* FenoVid */;
 			targetProxy = 366432DD17F1FB5800401CBF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -483,7 +487,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Taner Yildirim (677762377T)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Taner Yildirim (677762377T)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -524,7 +528,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Taner Yildirim (677762377T)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Taner Yildirim (677762377T)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -546,8 +550,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ali Can Bulbul (3KP7B3JNZE)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Taner Yildirim (677762377T)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Taner Yildirim (677762377T)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KomikliVideo/KomikliVideo-Prefix.pch";
 				INFOPLIST_FILE = "KomikliVideo/KomikliVideo-Info.plist";
@@ -562,8 +566,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ali Can Bulbul (3KP7B3JNZE)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Taner Yildirim (677762377T)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Taner Yildirim (677762377T)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KomikliVideo/KomikliVideo-Prefix.pch";
 				INFOPLIST_FILE = "KomikliVideo/KomikliVideo-Info.plist";
@@ -627,7 +631,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		366432E917F1FB5800401CBF /* Build configuration list for PBXNativeTarget "Komik TV" */ = {
+		366432E917F1FB5800401CBF /* Build configuration list for PBXNativeTarget "FenoVid" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				366432EA17F1FB5800401CBF /* Debug */,
