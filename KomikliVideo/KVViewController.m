@@ -51,7 +51,6 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     */
     
     //likeCounter.text = [NSString stringWithFormat:@"%lu",(unsigned long)tableData.count];
-        
 
 }
 
@@ -263,7 +262,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 -(IBAction)share:(id)sender{
     
-    NSArray* dataToShare = @[f(@"http://www.youtu.be/%@",next[@"id"]),@""];
+    NSArray* dataToShare = @[f(@"%@ http://youtu.be/%@ #FenomenVideolar http://orkestra.co/FV", next[@"title"], next[@"id"]),@""];
     
     activityViewController =
     [[UIActivityViewController alloc] initWithActivityItems:dataToShare applicationActivities:nil];
