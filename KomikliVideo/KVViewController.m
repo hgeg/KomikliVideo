@@ -7,7 +7,7 @@
 //
 
 #import "KVViewController.h"
-#import <Accounts/Accounts.h>
+#import "XCDYouTubeVideoPlayerViewController.h"
 
 #define vidBase @"<html><body style=\"margin:0;padding:0;background-color:#000;\"><iframe webkit-playsinline autoplay=\"autoplay\" id=\"ytplayer\" width=\"%dpx\" height=\"%dpx\" src=\"http://www.youtube.com/embed/%@?feature=player_detailpage&rel=0&iautohide=1&playsinline=1&showinfo=0&autoplay=1&enablejsapi=1&playerapiid=ytplayer\" frameborder=\"0\"></iframe></body></html>"
 
@@ -59,11 +59,9 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     [super viewDidLoad];
     indexOfNext = -1;
 	// Do any additional setup after loading the view, typically from a nib.
-    NSError *error;
-    NSLog(@"%@",[NSString stringWithContentsOfURL:[NSURL URLWithString:f(@"http://hgeg.io/komiktv/next/%@/20/",uid)] encoding:NSUTF8StringEncoding error: &error]);
-    NSLog(@"error: %@",error);
     NSData *data = [[NSString stringWithContentsOfURL:[NSURL URLWithString:f(@"http://hgeg.io/komiktv/next/%@/20/",uid)] encoding:NSUTF8StringEncoding error: nil] dataUsingEncoding:NSUTF8StringEncoding];
     videos = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
+    NSLog(@"%@",videos);
     
     tableData = [[NSMutableArray alloc] init];
     
@@ -71,7 +69,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     
     if ([standardUserDefaults objectForKey:@"tableData"] != nil) {
         tableData = [standardUserDefaults objectForKey:@"tableData"];
-        likeCounter.text = [NSString stringWithFormat:@"%d",[tableData count]];
+        likeCounter.text = [NSString stringWithFormat:@"%lu",(unsigned long)[tableData count]];
     } else {
         [standardUserDefaults setObject:tableData forKey:@"tableData"];
         likeCounter.text = [NSString stringWithFormat:@"%d",0];
@@ -134,8 +132,11 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 }
 
 - (void)playVideoWithId:(NSString *)videoId {
-    NSString *html = [NSString stringWithFormat:vidBase, (int)player.frame.size.width, (int)player.frame.size.height, videoId];
-    [player loadHTMLString:html baseURL:[NSURL URLWithString:@"http://youtube.com"]];
+    /*NSString *html = [NSString stringWithFormat:vidBase, (int)player.frame.size.width, (int)player.frame.size.height, videoId];
+    [player loadHTMLString:html baseURL:[NSURL URLWithString:@"http://youtube.com"]];*/
+    XCDYouTubeVideoPlayerViewController *videoPlayerViewController = [[XCDYouTubeVideoPlayerViewController alloc] initWithVideoIdentifier:videoId];
+    [videoPlayerViewController presentInView:self.videoContainerView];
+    [videoPlayerViewController.moviePlayer play];
 }
 
 - (void)playVideoWithObject:(NSNotification *)object {
@@ -170,7 +171,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray * tableData2 = [NSMutableArray arrayWithArray:[standardUserDefaults objectForKey:@"tableData"] ];
     
-    likeCounter.text = [NSString stringWithFormat:@"%d",tableData2.count];
+    likeCounter.text = [NSString stringWithFormat:@"%lu",(unsigned long)tableData2.count];
     
     if([tableData2 containsObject: next])
     {
@@ -231,11 +232,9 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
         videos = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
         indexOfNext = -1;
     }
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:f(@"http://hgeg.io/komiktv/watched/%@/%@/",uid,next[@"id"])]];
-    NSLog(@"watch: %@",[NSURL URLWithString:f(@"http://hgeg.io/komiktv/watched/%@/%@/",uid,next[@"id"])]);
-    NSURLConnection *c = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [NSString stringWithContentsOfURL:[NSURL URLWithString:f(@"http://hgeg.io/komiktv/watched/%@/%@/",uid,next[@"id"])] encoding:NSUTF8StringEncoding error:nil];
     next = videos[indexOfNext];
-     
+    NSLog(@"next: %@",next[@"id"]);
     videoName.text = next[@"title"];
     [self playVideoWithId:next[@"id"]];
     

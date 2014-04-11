@@ -22,10 +22,10 @@
 		366432DC17F1FB5800401CBF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366432BB17F1FB5700401CBF /* UIKit.framework */; };
 		366432E417F1FB5800401CBF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 366432E217F1FB5800401CBF /* InfoPlist.strings */; };
 		366432E617F1FB5800401CBF /* KomikliVideoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 366432E517F1FB5800401CBF /* KomikliVideoTests.m */; };
-		366432F517F2090E00401CBF /* LBYouTubeExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 366432F217F2090E00401CBF /* LBYouTubeExtractor.m */; };
-		366432F617F2090E00401CBF /* LBYouTubePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 366432F417F2090E00401CBF /* LBYouTubePlayerViewController.m */; };
 		366432F817F21FE100401CBF /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366432F717F21FE100401CBF /* MediaPlayer.framework */; };
 		D46CFA31184CD13800200649 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D46CFA30184CD13800200649 /* AdSupport.framework */; };
+		D4BA9BD518F7D9CF00F7E5D6 /* XCDYouTubeVideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BA9BD418F7D9CF00F7E5D6 /* XCDYouTubeVideoPlayerViewController.m */; };
+		D4BA9BD718F7D9DE00F7E5D6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4BA9BD618F7D9DE00F7E5D6 /* AVFoundation.framework */; };
 		D4F641E5184C966C00BE73DA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F641E4184C966C00BE73DA /* Accounts.framework */; };
 		D4F641E7184C967400BE73DA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F641E6184C967400BE73DA /* Social.framework */; };
 		DC77BE8B180EB8CF00ECF312 /* arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = DC77BE7C180EB8CF00ECF312 /* arrow_down.png */; };
@@ -65,7 +65,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		366432B417F1FB5700401CBF /* Komik TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Komik TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		366432B417F1FB5700401CBF /* FenoVid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FenoVid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		366432B717F1FB5700401CBF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		366432B917F1FB5700401CBF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		366432BB17F1FB5700401CBF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -85,13 +85,11 @@
 		366432E117F1FB5800401CBF /* KomikliVideoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KomikliVideoTests-Info.plist"; sourceTree = "<group>"; };
 		366432E317F1FB5800401CBF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		366432E517F1FB5800401CBF /* KomikliVideoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KomikliVideoTests.m; sourceTree = "<group>"; };
-		366432F017F2090E00401CBF /* LBYouTube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBYouTube.h; sourceTree = "<group>"; };
-		366432F117F2090E00401CBF /* LBYouTubeExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBYouTubeExtractor.h; sourceTree = "<group>"; };
-		366432F217F2090E00401CBF /* LBYouTubeExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBYouTubeExtractor.m; sourceTree = "<group>"; };
-		366432F317F2090E00401CBF /* LBYouTubePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBYouTubePlayerViewController.h; sourceTree = "<group>"; };
-		366432F417F2090E00401CBF /* LBYouTubePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBYouTubePlayerViewController.m; sourceTree = "<group>"; };
 		366432F717F21FE100401CBF /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		D46CFA30184CD13800200649 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		D4BA9BD318F7D9CF00F7E5D6 /* XCDYouTubeVideoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCDYouTubeVideoPlayerViewController.h; sourceTree = "<group>"; };
+		D4BA9BD418F7D9CF00F7E5D6 /* XCDYouTubeVideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCDYouTubeVideoPlayerViewController.m; sourceTree = "<group>"; };
+		D4BA9BD618F7D9DE00F7E5D6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D4F641E4184C966C00BE73DA /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		D4F641E6184C967400BE73DA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		DC77BE7C180EB8CF00ECF312 /* arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_down.png; sourceTree = "<group>"; };
@@ -126,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4BA9BD718F7D9DE00F7E5D6 /* AVFoundation.framework in Frameworks */,
 				D46CFA31184CD13800200649 /* AdSupport.framework in Frameworks */,
 				D4F641E7184C967400BE73DA /* Social.framework in Frameworks */,
 				D4F641E5184C966C00BE73DA /* Accounts.framework in Frameworks */,
@@ -162,7 +161,7 @@
 		366432B517F1FB5700401CBF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				366432B417F1FB5700401CBF /* Komik TV.app */,
+				366432B417F1FB5700401CBF /* FenoVid.app */,
 				366432D817F1FB5800401CBF /* KomikliVideoTests.xctest */,
 			);
 			name = Products;
@@ -171,6 +170,7 @@
 		366432B617F1FB5700401CBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D4BA9BD618F7D9DE00F7E5D6 /* AVFoundation.framework */,
 				D46CFA30184CD13800200649 /* AdSupport.framework */,
 				D4F641E6184C967400BE73DA /* Social.framework */,
 				D4F641E4184C966C00BE73DA /* Accounts.framework */,
@@ -186,7 +186,7 @@
 		366432BD17F1FB5700401CBF /* KomikliVideo */ = {
 			isa = PBXGroup;
 			children = (
-				366432EF17F208F000401CBF /* Youtube */,
+				D4BA9BD218F7D9CF00F7E5D6 /* XCDYouTubeVideoPlayerViewController */,
 				366432C617F1FB5800401CBF /* KVAppDelegate.h */,
 				366432C717F1FB5800401CBF /* KVAppDelegate.m */,
 				366432C917F1FB5800401CBF /* Main_iPhone.storyboard */,
@@ -232,16 +232,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		366432EF17F208F000401CBF /* Youtube */ = {
+		D4BA9BD218F7D9CF00F7E5D6 /* XCDYouTubeVideoPlayerViewController */ = {
 			isa = PBXGroup;
 			children = (
-				366432F017F2090E00401CBF /* LBYouTube.h */,
-				366432F117F2090E00401CBF /* LBYouTubeExtractor.h */,
-				366432F217F2090E00401CBF /* LBYouTubeExtractor.m */,
-				366432F317F2090E00401CBF /* LBYouTubePlayerViewController.h */,
-				366432F417F2090E00401CBF /* LBYouTubePlayerViewController.m */,
+				D4BA9BD318F7D9CF00F7E5D6 /* XCDYouTubeVideoPlayerViewController.h */,
+				D4BA9BD418F7D9CF00F7E5D6 /* XCDYouTubeVideoPlayerViewController.m */,
 			);
-			name = Youtube;
+			path = XCDYouTubeVideoPlayerViewController;
 			sourceTree = "<group>";
 		};
 		DC77BE78180EB81D00ECF312 /* Images */ = {
@@ -298,7 +295,7 @@
 			);
 			name = FenoVid;
 			productName = KomikliVideo;
-			productReference = 366432B417F1FB5700401CBF /* Komik TV.app */;
+			productReference = 366432B417F1FB5700401CBF /* FenoVid.app */;
 			productType = "com.apple.product-type.application";
 		};
 		366432D717F1FB5800401CBF /* KomikliVideoTests */ = {
@@ -408,10 +405,9 @@
 			files = (
 				366432D117F1FB5800401CBF /* KVViewController.m in Sources */,
 				366432C417F1FB5800401CBF /* main.m in Sources */,
-				366432F517F2090E00401CBF /* LBYouTubeExtractor.m in Sources */,
 				366432C817F1FB5800401CBF /* KVAppDelegate.m in Sources */,
+				D4BA9BD518F7D9CF00F7E5D6 /* XCDYouTubeVideoPlayerViewController.m in Sources */,
 				DC77BEB2180EE31000ECF312 /* KVBegendiklerimViewController.m in Sources */,
-				366432F617F2090E00401CBF /* LBYouTubePlayerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
