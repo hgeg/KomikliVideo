@@ -10,14 +10,17 @@
 #import <Accounts/Accounts.h>
 #import <Twitter/Twitter.h>
 
-@interface KVViewController : UIViewController <NSURLConnectionDelegate>
+#import "GADInterstitial.h"
 
+@interface KVViewController : UIViewController <NSURLConnectionDelegate, GADInterstitialDelegate>
 {
     NSArray *videos;
     int indexOfNext;
     NSDictionary *next;
     NSMutableArray *tableData;
     UIActivityViewController *activityViewController;
+    GADInterstitial *interstitial_;
+    int counter;
 }
 @property (weak, nonatomic) IBOutlet UIWebView *player;
 @property (weak, nonatomic) IBOutlet UIView *topView;

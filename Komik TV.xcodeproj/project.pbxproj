@@ -23,6 +23,13 @@
 		366432E417F1FB5800401CBF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 366432E217F1FB5800401CBF /* InfoPlist.strings */; };
 		366432E617F1FB5800401CBF /* KomikliVideoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 366432E517F1FB5800401CBF /* KomikliVideoTests.m */; };
 		366432F817F21FE100401CBF /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366432F717F21FE100401CBF /* MediaPlayer.framework */; };
+		D42A714718FE4FA600B46DC3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D42A714618FE4FA600B46DC3 /* AudioToolbox.framework */; };
+		D42A714918FE4FB500B46DC3 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D42A714818FE4FB500B46DC3 /* CoreTelephony.framework */; };
+		D42A714B18FE4FBF00B46DC3 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D42A714A18FE4FBF00B46DC3 /* MessageUI.framework */; };
+		D42A714D18FE4FCB00B46DC3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D42A714C18FE4FCB00B46DC3 /* StoreKit.framework */; };
+		D42A714F18FE4FD300B46DC3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D42A714E18FE4FD300B46DC3 /* SystemConfiguration.framework */; };
+		D42A723418FE557800B46DC3 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D42A71E518FE557800B46DC3 /* libGoogleAdMobAds.a */; };
+		D42A723518FE557800B46DC3 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = D42A71E618FE557800B46DC3 /* README.txt */; };
 		D46CFA31184CD13800200649 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D46CFA30184CD13800200649 /* AdSupport.framework */; };
 		D4BA9BD518F7D9CF00F7E5D6 /* XCDYouTubeVideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BA9BD418F7D9CF00F7E5D6 /* XCDYouTubeVideoPlayerViewController.m */; };
 		D4BA9BD718F7D9DE00F7E5D6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4BA9BD618F7D9DE00F7E5D6 /* AVFoundation.framework */; };
@@ -86,6 +93,22 @@
 		366432E317F1FB5800401CBF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		366432E517F1FB5800401CBF /* KomikliVideoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KomikliVideoTests.m; sourceTree = "<group>"; };
 		366432F717F21FE100401CBF /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		D42A714618FE4FA600B46DC3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D42A714818FE4FB500B46DC3 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		D42A714A18FE4FBF00B46DC3 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		D42A714C18FE4FCB00B46DC3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		D42A714E18FE4FD300B46DC3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D42A71DC18FE557800B46DC3 /* GADAdMobExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdMobExtras.h; sourceTree = "<group>"; };
+		D42A71DD18FE557800B46DC3 /* GADAdNetworkExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdNetworkExtras.h; sourceTree = "<group>"; };
+		D42A71DE18FE557800B46DC3 /* GADAdSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdSize.h; sourceTree = "<group>"; };
+		D42A71DF18FE557800B46DC3 /* GADBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerView.h; sourceTree = "<group>"; };
+		D42A71E018FE557800B46DC3 /* GADBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerViewDelegate.h; sourceTree = "<group>"; };
+		D42A71E118FE557800B46DC3 /* GADInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitial.h; sourceTree = "<group>"; };
+		D42A71E218FE557800B46DC3 /* GADInterstitialDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitialDelegate.h; sourceTree = "<group>"; };
+		D42A71E318FE557800B46DC3 /* GADRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequest.h; sourceTree = "<group>"; };
+		D42A71E418FE557800B46DC3 /* GADRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequestError.h; sourceTree = "<group>"; };
+		D42A71E518FE557800B46DC3 /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAdMobAds.a; sourceTree = "<group>"; };
+		D42A71E618FE557800B46DC3 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		D46CFA30184CD13800200649 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		D4BA9BD318F7D9CF00F7E5D6 /* XCDYouTubeVideoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCDYouTubeVideoPlayerViewController.h; sourceTree = "<group>"; };
 		D4BA9BD418F7D9CF00F7E5D6 /* XCDYouTubeVideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCDYouTubeVideoPlayerViewController.m; sourceTree = "<group>"; };
@@ -124,6 +147,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D42A714F18FE4FD300B46DC3 /* SystemConfiguration.framework in Frameworks */,
+				D42A714D18FE4FCB00B46DC3 /* StoreKit.framework in Frameworks */,
+				D42A714B18FE4FBF00B46DC3 /* MessageUI.framework in Frameworks */,
+				D42A714918FE4FB500B46DC3 /* CoreTelephony.framework in Frameworks */,
+				D42A714718FE4FA600B46DC3 /* AudioToolbox.framework in Frameworks */,
 				D4BA9BD718F7D9DE00F7E5D6 /* AVFoundation.framework in Frameworks */,
 				D46CFA31184CD13800200649 /* AdSupport.framework in Frameworks */,
 				D4F641E7184C967400BE73DA /* Social.framework in Frameworks */,
@@ -132,6 +160,7 @@
 				366432BA17F1FB5700401CBF /* CoreGraphics.framework in Frameworks */,
 				366432BC17F1FB5700401CBF /* UIKit.framework in Frameworks */,
 				366432B817F1FB5700401CBF /* Foundation.framework in Frameworks */,
+				D42A723418FE557800B46DC3 /* libGoogleAdMobAds.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +199,11 @@
 		366432B617F1FB5700401CBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D42A714E18FE4FD300B46DC3 /* SystemConfiguration.framework */,
+				D42A714C18FE4FCB00B46DC3 /* StoreKit.framework */,
+				D42A714A18FE4FBF00B46DC3 /* MessageUI.framework */,
+				D42A714818FE4FB500B46DC3 /* CoreTelephony.framework */,
+				D42A714618FE4FA600B46DC3 /* AudioToolbox.framework */,
 				D4BA9BD618F7D9DE00F7E5D6 /* AVFoundation.framework */,
 				D46CFA30184CD13800200649 /* AdSupport.framework */,
 				D4F641E6184C967400BE73DA /* Social.framework */,
@@ -186,6 +220,7 @@
 		366432BD17F1FB5700401CBF /* KomikliVideo */ = {
 			isa = PBXGroup;
 			children = (
+				D42A715018FE557800B46DC3 /* GoogleAdMobAdsSdkiOS-6.8.0 2 */,
 				D4BA9BD218F7D9CF00F7E5D6 /* XCDYouTubeVideoPlayerViewController */,
 				366432C617F1FB5800401CBF /* KVAppDelegate.h */,
 				366432C717F1FB5800401CBF /* KVAppDelegate.m */,
@@ -230,6 +265,24 @@
 				366432E217F1FB5800401CBF /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D42A715018FE557800B46DC3 /* GoogleAdMobAdsSdkiOS-6.8.0 2 */ = {
+			isa = PBXGroup;
+			children = (
+				D42A71DC18FE557800B46DC3 /* GADAdMobExtras.h */,
+				D42A71DD18FE557800B46DC3 /* GADAdNetworkExtras.h */,
+				D42A71DE18FE557800B46DC3 /* GADAdSize.h */,
+				D42A71DF18FE557800B46DC3 /* GADBannerView.h */,
+				D42A71E018FE557800B46DC3 /* GADBannerViewDelegate.h */,
+				D42A71E118FE557800B46DC3 /* GADInterstitial.h */,
+				D42A71E218FE557800B46DC3 /* GADInterstitialDelegate.h */,
+				D42A71E318FE557800B46DC3 /* GADRequest.h */,
+				D42A71E418FE557800B46DC3 /* GADRequestError.h */,
+				D42A71E518FE557800B46DC3 /* libGoogleAdMobAds.a */,
+				D42A71E618FE557800B46DC3 /* README.txt */,
+			);
+			path = "GoogleAdMobAdsSdkiOS-6.8.0 2";
 			sourceTree = "<group>";
 		};
 		D4BA9BD218F7D9CF00F7E5D6 /* XCDYouTubeVideoPlayerViewController */ = {
@@ -379,6 +432,7 @@
 				DC77BE99180EB8CF00ECF312 /* shuffle.png in Resources */,
 				DC77BEA1180EBEAE00ECF312 /* Dosis-Bold.ttf in Resources */,
 				DC77BE8D180EB8CF00ECF312 /* column.png in Resources */,
+				D42A723518FE557800B46DC3 /* README.txt in Resources */,
 				DC811719185097C400465708 /* heart_red.png in Resources */,
 				DC77BEA7180EBEAE00ECF312 /* Dosis-SemiBold.ttf in Resources */,
 				DC77BEA3180EBEAE00ECF312 /* Dosis-ExtraBold.ttf in Resources */,
@@ -551,8 +605,20 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KomikliVideo/KomikliVideo-Prefix.pch";
 				INFOPLIST_FILE = "KomikliVideo/KomikliVideo-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KomikliVideo/GoogleAdMobAdsSdkiOS-6.5.1/Add-ons/GoogleAnalyticsServicesiOS_3.0/GoogleAnalytics/Library",
+					"$(PROJECT_DIR)/KomikliVideo/GoogleAdMobAdsSdkiOS-6.5.1/Add-ons/GoogleAnalyticsServicesiOS_3.0",
+					"$(PROJECT_DIR)/KomikliVideo/GoogleAdMobAdsSdkiOS-6.5.1",
+					"$(PROJECT_DIR)/KomikliVideo/GoogleAdMobAdsSdkiOS-6.8.0",
+					"2/Add-ons/GoogleAnalyticsServicesiOS_3.03",
+					"$(PROJECT_DIR)/KomikliVideo/GoogleAdMobAdsSdkiOS-6.8.0",
+					2,
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -567,8 +633,20 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KomikliVideo/KomikliVideo-Prefix.pch";
 				INFOPLIST_FILE = "KomikliVideo/KomikliVideo-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KomikliVideo/GoogleAdMobAdsSdkiOS-6.5.1/Add-ons/GoogleAnalyticsServicesiOS_3.0/GoogleAnalytics/Library",
+					"$(PROJECT_DIR)/KomikliVideo/GoogleAdMobAdsSdkiOS-6.5.1/Add-ons/GoogleAnalyticsServicesiOS_3.0",
+					"$(PROJECT_DIR)/KomikliVideo/GoogleAdMobAdsSdkiOS-6.5.1",
+					"$(PROJECT_DIR)/KomikliVideo/GoogleAdMobAdsSdkiOS-6.8.0",
+					"2/Add-ons/GoogleAnalyticsServicesiOS_3.03",
+					"$(PROJECT_DIR)/KomikliVideo/GoogleAdMobAdsSdkiOS-6.8.0",
+					2,
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
