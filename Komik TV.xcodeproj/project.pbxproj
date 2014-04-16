@@ -14,7 +14,6 @@
 		366432C417F1FB5800401CBF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 366432C317F1FB5800401CBF /* main.m */; };
 		366432C817F1FB5800401CBF /* KVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 366432C717F1FB5800401CBF /* KVAppDelegate.m */; };
 		366432CB17F1FB5800401CBF /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 366432C917F1FB5800401CBF /* Main_iPhone.storyboard */; };
-		366432CE17F1FB5800401CBF /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 366432CC17F1FB5800401CBF /* Main_iPad.storyboard */; };
 		366432D117F1FB5800401CBF /* KVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 366432D017F1FB5800401CBF /* KVViewController.m */; };
 		366432D317F1FB5800401CBF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 366432D217F1FB5800401CBF /* Images.xcassets */; };
 		366432DA17F1FB5800401CBF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366432D917F1FB5800401CBF /* XCTest.framework */; };
@@ -65,7 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		366432B417F1FB5700401CBF /* Komik TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Komik TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		366432B417F1FB5700401CBF /* FenoVid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FenoVid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		366432B717F1FB5700401CBF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		366432B917F1FB5700401CBF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		366432BB17F1FB5700401CBF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -76,7 +75,6 @@
 		366432C617F1FB5800401CBF /* KVAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVAppDelegate.h; sourceTree = "<group>"; };
 		366432C717F1FB5800401CBF /* KVAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVAppDelegate.m; sourceTree = "<group>"; };
 		366432CA17F1FB5800401CBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		366432CD17F1FB5800401CBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		366432CF17F1FB5800401CBF /* KVViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVViewController.h; sourceTree = "<group>"; };
 		366432D017F1FB5800401CBF /* KVViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVViewController.m; sourceTree = "<group>"; };
 		366432D217F1FB5800401CBF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -162,7 +160,7 @@
 		366432B517F1FB5700401CBF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				366432B417F1FB5700401CBF /* Komik TV.app */,
+				366432B417F1FB5700401CBF /* FenoVid.app */,
 				366432D817F1FB5800401CBF /* KomikliVideoTests.xctest */,
 			);
 			name = Products;
@@ -192,7 +190,6 @@
 				366432C917F1FB5800401CBF /* Main_iPhone.storyboard */,
 				DC77BEB0180EE30F00ECF312 /* KVBegendiklerimViewController.h */,
 				DC77BEB1180EE30F00ECF312 /* KVBegendiklerimViewController.m */,
-				366432CC17F1FB5800401CBF /* Main_iPad.storyboard */,
 				366432CF17F1FB5800401CBF /* KVViewController.h */,
 				366432D017F1FB5800401CBF /* KVViewController.m */,
 				366432D217F1FB5800401CBF /* Images.xcassets */,
@@ -298,7 +295,7 @@
 			);
 			name = FenoVid;
 			productName = KomikliVideo;
-			productReference = 366432B417F1FB5700401CBF /* Komik TV.app */;
+			productReference = 366432B417F1FB5700401CBF /* FenoVid.app */;
 			productType = "com.apple.product-type.application";
 		};
 		366432D717F1FB5800401CBF /* KomikliVideoTests */ = {
@@ -364,7 +361,6 @@
 				DC77BE91180EB8CF00ECF312 /* heart_large.png in Resources */,
 				DC77BEA6180EBEAE00ECF312 /* Dosis-Medium.ttf in Resources */,
 				DC77BE98180EB8CF00ECF312 /* share.png in Resources */,
-				366432CE17F1FB5800401CBF /* Main_iPad.storyboard in Resources */,
 				366432D317F1FB5800401CBF /* Images.xcassets in Resources */,
 				DC77BE8C180EB8CF00ECF312 /* arrow_right.png in Resources */,
 				DC77BEA2180EBEAE00ECF312 /* Dosis-Book.ttf in Resources */,
@@ -450,14 +446,6 @@
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
-		366432CC17F1FB5800401CBF /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				366432CD17F1FB5800401CBF /* Base */,
-			);
-			name = Main_iPad.storyboard;
-			sourceTree = "<group>";
-		};
 		366432E217F1FB5800401CBF /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -486,8 +474,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Taner Yildirim (677762377T)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Taner Yildirim (677762377T)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Taner Yildirim";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Taner Yildirim";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -527,8 +515,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Taner Yildirim (677762377T)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Taner Yildirim (677762377T)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Taner Yildirim";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Taner Yildirim";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -550,13 +538,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Taner Yildirim (677762377T)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Taner Yildirim (677762377T)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Taner Yildirim";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Taner Yildirim";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KomikliVideo/KomikliVideo-Prefix.pch";
 				INFOPLIST_FILE = "KomikliVideo/KomikliVideo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "F3AD0F8B-6D5E-47CC-9D7B-EC73EFD41265";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -566,13 +555,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Taner Yildirim (677762377T)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Taner Yildirim (677762377T)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Taner Yildirim";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Taner Yildirim";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KomikliVideo/KomikliVideo-Prefix.pch";
 				INFOPLIST_FILE = "KomikliVideo/KomikliVideo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "F3AD0F8B-6D5E-47CC-9D7B-EC73EFD41265";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
