@@ -28,7 +28,6 @@
 		D42A714B18FE4FBF00B46DC3 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D42A714A18FE4FBF00B46DC3 /* MessageUI.framework */; };
 		D42A714D18FE4FCB00B46DC3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D42A714C18FE4FCB00B46DC3 /* StoreKit.framework */; };
 		D42A714F18FE4FD300B46DC3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D42A714E18FE4FD300B46DC3 /* SystemConfiguration.framework */; };
-		D42A723418FE557800B46DC3 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D42A71E518FE557800B46DC3 /* libGoogleAdMobAds.a */; };
 		D42A723518FE557800B46DC3 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = D42A71E618FE557800B46DC3 /* README.txt */; };
 		D46CFA31184CD13800200649 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D46CFA30184CD13800200649 /* AdSupport.framework */; };
 		D4BA9BD518F7D9CF00F7E5D6 /* XCDYouTubeVideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BA9BD418F7D9CF00F7E5D6 /* XCDYouTubeVideoPlayerViewController.m */; };
@@ -59,6 +58,7 @@
 		DC77BEB2180EE31000ECF312 /* KVBegendiklerimViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC77BEB1180EE30F00ECF312 /* KVBegendiklerimViewController.m */; };
 		DC811717185097BD00465708 /* heart_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = DC811716185097BD00465708 /* heart_dark.png */; };
 		DC811719185097C400465708 /* heart_red.png in Resources */ = {isa = PBXBuildFile; fileRef = DC811718185097C400465708 /* heart_red.png */; };
+		DCC98AF318FE8BC700D8A10C /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D42A71E518FE557800B46DC3 /* libGoogleAdMobAds.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +72,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		366432B417F1FB5700401CBF /* FenoVid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FenoVid.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		366432B417F1FB5700401CBF /* Fenomen Videolar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fenomen Videolar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		366432B717F1FB5700401CBF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		366432B917F1FB5700401CBF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		366432BB17F1FB5700401CBF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -147,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCC98AF318FE8BC700D8A10C /* libGoogleAdMobAds.a in Frameworks */,
 				D42A714F18FE4FD300B46DC3 /* SystemConfiguration.framework in Frameworks */,
 				D42A714D18FE4FCB00B46DC3 /* StoreKit.framework in Frameworks */,
 				D42A714B18FE4FBF00B46DC3 /* MessageUI.framework in Frameworks */,
@@ -160,7 +161,6 @@
 				366432BA17F1FB5700401CBF /* CoreGraphics.framework in Frameworks */,
 				366432BC17F1FB5700401CBF /* UIKit.framework in Frameworks */,
 				366432B817F1FB5700401CBF /* Foundation.framework in Frameworks */,
-				D42A723418FE557800B46DC3 /* libGoogleAdMobAds.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,7 +190,7 @@
 		366432B517F1FB5700401CBF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				366432B417F1FB5700401CBF /* FenoVid.app */,
+				366432B417F1FB5700401CBF /* Fenomen Videolar.app */,
 				366432D817F1FB5800401CBF /* KomikliVideoTests.xctest */,
 			);
 			name = Products;
@@ -334,9 +334,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		366432B317F1FB5700401CBF /* FenoVid */ = {
+		366432B317F1FB5700401CBF /* Fenomen Videolar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 366432E917F1FB5800401CBF /* Build configuration list for PBXNativeTarget "FenoVid" */;
+			buildConfigurationList = 366432E917F1FB5800401CBF /* Build configuration list for PBXNativeTarget "Fenomen Videolar" */;
 			buildPhases = (
 				366432B017F1FB5700401CBF /* Sources */,
 				366432B117F1FB5700401CBF /* Frameworks */,
@@ -346,9 +346,9 @@
 			);
 			dependencies = (
 			);
-			name = FenoVid;
+			name = "Fenomen Videolar";
 			productName = KomikliVideo;
-			productReference = 366432B417F1FB5700401CBF /* FenoVid.app */;
+			productReference = 366432B417F1FB5700401CBF /* Fenomen Videolar.app */;
 			productType = "com.apple.product-type.application";
 		};
 		366432D717F1FB5800401CBF /* KomikliVideoTests */ = {
@@ -380,7 +380,7 @@
 				ORGANIZATIONNAME = "Can Bülbül";
 				TargetAttributes = {
 					366432B317F1FB5700401CBF = {
-						DevelopmentTeam = HHZ643A77V;
+						DevelopmentTeam = 22R85DDBLV;
 					};
 					366432D717F1FB5800401CBF = {
 						TestTargetID = 366432B317F1FB5700401CBF;
@@ -400,7 +400,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				366432B317F1FB5700401CBF /* FenoVid */,
+				366432B317F1FB5700401CBF /* Fenomen Videolar */,
 				366432D717F1FB5800401CBF /* KomikliVideoTests */,
 			);
 		};
@@ -478,7 +478,7 @@
 /* Begin PBXTargetDependency section */
 		366432DE17F1FB5800401CBF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 366432B317F1FB5700401CBF /* FenoVid */;
+			target = 366432B317F1FB5700401CBF /* Fenomen Videolar */;
 			targetProxy = 366432DD17F1FB5800401CBF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -614,10 +614,12 @@
 					"2/Add-ons/GoogleAnalyticsServicesiOS_3.03",
 					"$(PROJECT_DIR)/KomikliVideo/GoogleAdMobAdsSdkiOS-6.8.0",
 					2,
+					"/Users/taneryildirim/Downloads/KomikliVideo/KomikliVideo/GoogleAdMobAdsSdkiOS-6.8.0\\ 2",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "D7013127-451C-486E-BBA8-5EF62AE1A491";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -642,10 +644,12 @@
 					"2/Add-ons/GoogleAnalyticsServicesiOS_3.03",
 					"$(PROJECT_DIR)/KomikliVideo/GoogleAdMobAdsSdkiOS-6.8.0",
 					2,
+					"/Users/taneryildirim/Downloads/KomikliVideo/KomikliVideo/GoogleAdMobAdsSdkiOS-6.8.0\\ 2",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "D7013127-451C-486E-BBA8-5EF62AE1A491";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -705,7 +709,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		366432E917F1FB5800401CBF /* Build configuration list for PBXNativeTarget "FenoVid" */ = {
+		366432E917F1FB5800401CBF /* Build configuration list for PBXNativeTarget "Fenomen Videolar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				366432EA17F1FB5800401CBF /* Debug */,
