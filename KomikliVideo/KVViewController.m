@@ -145,8 +145,6 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 - (void)playVideoWithObject:(NSNotification *)object {
     NSDictionary *video = object.object;
     
-    NSLog(@"id: %@",video);
-    NSString *html = [NSString stringWithFormat:vidBase, (int)player.frame.size.width, (int)player.frame.size.height, video[@"id"]];
     videoName.text = video[@"title"];
     NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray * tableData2 = [NSMutableArray arrayWithArray:[standardUserDefaults objectForKey:@"tableData"] ];
@@ -166,7 +164,9 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
         
         likeButton.restorationIdentifier = @"1";
     }
-    [player loadHTMLString:html baseURL:[NSURL URLWithString:@"http://youtube.com"]];
+    XCDYouTubeVideoPlayerViewController *videoPlayerViewController = [[XCDYouTubeVideoPlayerViewController alloc] initWithVideoIdentifier:video[@"id"]];
+    [videoPlayerViewController presentInView:self.videoContainerView];
+    [videoPlayerViewController.moviePlayer play];
 }
 
 -(void)setLikeCounter{
@@ -191,8 +191,6 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
         
         likeButton.restorationIdentifier = @"1";
     }
-    
-    
     
 }
 
