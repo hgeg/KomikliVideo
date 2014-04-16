@@ -7,27 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Accounts/Accounts.h>
+#import "LBYouTube.h"
 #import <Twitter/Twitter.h>
 
-#import "GADInterstitial.h"
+@interface KVViewController : UIViewController <NSURLConnectionDelegate>
 
-@interface KVViewController : UIViewController <NSURLConnectionDelegate, GADInterstitialDelegate>
 {
     NSArray *videos;
     int indexOfNext;
     NSDictionary *next;
     NSMutableArray *tableData;
     UIActivityViewController *activityViewController;
-    GADInterstitial *interstitial_;
-    int counter;
 }
 @property (weak, nonatomic) IBOutlet UIWebView *player;
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 @property (weak, nonatomic) IBOutlet UILabel *videoName;
-@property (weak, nonatomic) IBOutlet UIView *videoContainerView;
 @property (weak, nonatomic) IBOutlet UILabel *header;
 @property (weak, nonatomic) IBOutlet UIButton *shuffleButton;
 @property (weak, nonatomic) IBOutlet UIButton *likesButton;
