@@ -138,7 +138,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     [NSString stringWithContentsOfURL:[NSURL URLWithString:f(@"http://hgeg.io/komiktv/watched/%@/%@/",uid,videoId)] encoding:NSUTF8StringEncoding error: nil];
     XCDYouTubeVideoPlayerViewController *videoPlayerViewController = [[XCDYouTubeVideoPlayerViewController alloc] initWithVideoIdentifier:videoId];
     [videoPlayerViewController presentInView:self.videoContainerView];
-    [videoPlayerViewController.moviePlayer play];
+    [videoPlayerViewController.moviePlayer prepareToPlay];
 }
 
 - (void)playVideoWithObject:(NSNotification *)object {
@@ -165,7 +165,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     }
     XCDYouTubeVideoPlayerViewController *videoPlayerViewController = [[XCDYouTubeVideoPlayerViewController alloc] initWithVideoIdentifier:video[@"id"]];
     [videoPlayerViewController presentInView:self.videoContainerView];
-    [videoPlayerViewController.moviePlayer play];
+    [videoPlayerViewController.moviePlayer prepareToPlay];
 }
 
 -(void)setLikeCounter{
