@@ -108,7 +108,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     
     UILabel *customTitle = [[UILabel alloc] init];
     [customTitle setFrame:CGRectMake(0,5,50,20)];
-    customTitle.text = @"Fenomen Videolar";
+    customTitle.text = @"Komik TV";
     [customTitle setFont: Dosisbook];
     [customTitle setTextColor:UIColorFromRGB(0xb4b4b5)];
     
