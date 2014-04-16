@@ -7,7 +7,8 @@
 //
 
 #import "KVViewController.h"
-#import <Accounts/Accounts.h>
+#import "XCDYouTubeVideoPlayerViewController.h"
+#import "GADInterstitial.h"
 
 #define vidBase @"<html><body style=\"margin:0;padding:0;background-color:#000;\"><iframe webkit-playsinline autoplay=\"autoplay\" id=\"ytplayer\" width=\"%dpx\" height=\"%dpx\" src=\"http://www.youtube.com/embed/%@?feature=player_detailpage&rel=0&iautohide=1&playsinline=1&showinfo=0&autoplay=1&enablejsapi=1&playerapiid=ytplayer\" frameborder=\"0\"></iframe></body></html>"
 
@@ -57,12 +58,12 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    indexOfNext = -1;
+    counter = 0;
 	// Do any additional setup after loading the view, typically from a nib.
-    NSError *error;
-    NSLog(@"%@",[NSString stringWithContentsOfURL:[NSURL URLWithString:f(@"http://hgeg.io/komiktv/next/%@/20/",uid)] encoding:NSUTF8StringEncoding error: &error]);
-    NSLog(@"error: %@",error);
     NSData *data = [[NSString stringWithContentsOfURL:[NSURL URLWithString:f(@"http://hgeg.io/komiktv/next/%@/20/",uid)] encoding:NSUTF8StringEncoding error: nil] dataUsingEncoding:NSUTF8StringEncoding];
     videos = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
+    NSLog(@"%@",videos);
     
     tableData = [[NSMutableArray alloc] init];
     
@@ -70,7 +71,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     
     if ([standardUserDefaults objectForKey:@"tableData"] != nil) {
         tableData = [standardUserDefaults objectForKey:@"tableData"];
-        likeCounter.text = [NSString stringWithFormat:@"%d",[tableData count]];
+        likeCounter.text = [NSString stringWithFormat:@"%lu",(unsigned long)[tableData count]];
     } else {
         [standardUserDefaults setObject:tableData forKey:@"tableData"];
         likeCounter.text = [NSString stringWithFormat:@"%d",0];
@@ -124,6 +125,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setLikeCounter) name:@"unlike" object:Nil];
     
     NC_addObserver(@"playVideo", @selector(playVideoWithObject:));
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -133,8 +135,11 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 }
 
 - (void)playVideoWithId:(NSString *)videoId {
-    NSString *html = [NSString stringWithFormat:vidBase, (int)player.frame.size.width, (int)player.frame.size.height, videoId];
-    [player loadHTMLString:html baseURL:[NSURL URLWithString:@"http://youtube.com"]];
+    /*NSString *html = [NSString stringWithFormat:vidBase, (int)player.frame.size.width, (int)player.frame.size.height, videoId];
+    [player loadHTMLString:html baseURL:[NSURL URLWithString:@"http://youtube.com"]];*/
+    XCDYouTubeVideoPlayerViewController *videoPlayerViewController = [[XCDYouTubeVideoPlayerViewController alloc] initWithVideoIdentifier:videoId];
+    [videoPlayerViewController presentInView:self.videoContainerView];
+    [videoPlayerViewController.moviePlayer play];
 }
 
 - (void)playVideoWithObject:(NSNotification *)object {
@@ -169,7 +174,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray * tableData2 = [NSMutableArray arrayWithArray:[standardUserDefaults objectForKey:@"tableData"] ];
     
-    likeCounter.text = [NSString stringWithFormat:@"%d",tableData2.count];
+    likeCounter.text = [NSString stringWithFormat:@"%lu",(unsigned long)tableData2.count];
     
     if([tableData2 containsObject: next])
     {
@@ -224,11 +229,14 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 }
 
 - (IBAction)nextVideo:(id)sender {
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:f(@"http://hgeg.io/komiktv/watched/%@/%@/",uid,next[@"id"])]];
-    NSLog(@"watch: %@",[NSURL URLWithString:f(@"http://hgeg.io/komiktv/watched/%@/%@/",uid,next[@"id"])]);
-    NSURLConnection *c = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    indexOfNext++;
+    if (indexOfNext >= [videos count]) {
+        NSData *data = [[NSString stringWithContentsOfURL:[NSURL URLWithString:f(@"http://hgeg.io/komiktv/next/%@/20/",uid)] encoding:NSUTF8StringEncoding error: nil] dataUsingEncoding:NSUTF8StringEncoding];
+        videos = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
+        indexOfNext = 0;
+    }
     next = videos[indexOfNext];
-     
+    NSLog(@"next: %@",next[@"id"]);
     videoName.text = next[@"title"];
     [self playVideoWithId:next[@"id"]];
     
@@ -251,13 +259,17 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
         
         likeButton.restorationIdentifier = @"1";
     }
-    indexOfNext++;
-    if (indexOfNext >= [videos count]) {
-        NSData *data = [[NSString stringWithContentsOfURL:[NSURL URLWithString:f(@"http://hgeg.io/komiktv/next/%@/20/",uid)] encoding:NSUTF8StringEncoding error: nil] dataUsingEncoding:NSUTF8StringEncoding];
-        videos = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
-        indexOfNext = 0;
+    counter++;
+    if (counter%10==0) {
+        GADRequest *request = [GADRequest request];
+        request.testDevices = @[ GAD_SIMULATOR_ID ];
+        request.testing = true;
+        interstitial_ = [[GADInterstitial alloc] init];
+        interstitial_.adUnitID = @"a15347d61bbc99b";
+        interstitial_.delegate = self;
+        [interstitial_ loadRequest:request];
     }
-
+    
 }
 
 -(IBAction)share:(id)sender{
@@ -279,6 +291,10 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     NSLog(@"retval: %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+}
+
+- (void)interstitialDidReceiveAd:(GADInterstitial *)ad {
+    [interstitial_ presentFromRootViewController:self];
 }
 
 @end
