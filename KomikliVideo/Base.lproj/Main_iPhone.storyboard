@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="gH3-EZ-ImT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="gH3-EZ-ImT">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
-        <!--View Controller - Komik TV-->
+        <!--View Controller - Fenomen Videolar-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="KVViewController" sceneMemberID="viewController">
@@ -71,7 +71,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="1" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLB-PF-qXa">
-                                        <rect key="frame" x="153" y="19" width="20" height="17"/>
+                                        <rect key="frame" x="156" y="19" width="20" height="17"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="5df-aB-03Y"/>
@@ -258,7 +258,7 @@
                             <constraint firstItem="S9m-3E-RF7" firstAttribute="trailing" secondItem="sk9-xz-olZ" secondAttribute="trailing" id="zo6-hn-CpI"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Komik TV" id="wmg-wZ-hkF">
+                    <navigationItem key="navigationItem" title="Fenomen Videolar" id="wmg-wZ-hkF">
                         <barButtonItem key="backBarButtonItem" title="Geri Dön" id="15M-bE-9fz"/>
                     </navigationItem>
                     <connections>
@@ -293,7 +293,7 @@
             </objects>
             <point key="canvasLocation" x="-286" y="674"/>
         </scene>
-        <!--Begendiklerim View Controller - Komik TV-->
+        <!--Begendiklerim View Controller - Fenomen Videolar-->
         <scene sceneID="Xf6-5M-uJ4">
             <objects>
                 <viewController id="2h8-iO-ZCJ" customClass="KVBegendiklerimViewController" sceneMemberID="viewController">
@@ -340,7 +340,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Komik TV" id="koq-Ho-VtX"/>
+                    <navigationItem key="navigationItem" title="Fenomen Videolar" id="koq-Ho-VtX"/>
                     <connections>
                         <outlet property="myTable" destination="g1E-Et-4hd" id="O1w-wo-zif"/>
                     </connections>
